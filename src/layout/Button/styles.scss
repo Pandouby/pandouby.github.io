@@ -1,0 +1,28 @@
+@import '/src/styles/theme-variables.scss';
+
+.theme-button {
+    z-index: 100;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    @include themify($themes) {
+        background-color: themed('secondaryColor');
+        color: themed('textColor');
+    }
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.theme-button:hover {
+    @include themify($themes) {
+        box-shadow: 5px 5px 5px themed('boxShadowColor');
+    }
+}

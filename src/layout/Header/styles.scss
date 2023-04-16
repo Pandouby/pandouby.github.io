@@ -1,0 +1,14 @@
+@import '/src/styles/theme-variables.scss';
+
+.header {
+    position: fixed;
+    @include themify($themes) {
+        color: themed('textColor');
+    }
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0;
+}
