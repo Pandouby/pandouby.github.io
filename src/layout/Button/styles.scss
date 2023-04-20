@@ -21,6 +21,10 @@
     transition: box-shadow 0.3s ease-in-out;
 }
 
+.theme-button .theme-icon {
+    scale: 200%;
+}
+
 .theme-button:hover {
     @include themify($themes) {
         box-shadow: 5px 5px 5px themed('boxShadowColor');

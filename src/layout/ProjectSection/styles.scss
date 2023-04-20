@@ -1,0 +1,31 @@
+@import '/src/styles/theme-variables.scss';
+
+.project-section {
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+
+.project-section .project-title {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  width: 100%;
+  position: static;
+  font-family: Suisseintl, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 19vw;
+  line-height: 10.6vw;
+  letter-spacing: -0.5vw;
+}
+
+.projects-wrapper {
+  display: block;
+}

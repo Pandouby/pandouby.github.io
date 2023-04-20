@@ -1,6 +1,7 @@
 import { FC, useContext } from "react";
 import { ThemeContext } from '../../contexts/theme-context';
 import "./styles.scss"
+import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md'
 
 const ThemeButton: FC = () => {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -14,8 +15,8 @@ const ThemeButton: FC = () => {
     return(
         <button className="theme-button" onClick={handleThemeChange}>
             {theme === 'light' ? 
-            <span className="material-symbols-outlined">dark_mode</span> :
-            <span className="material-symbols-outlined">light_mode</span>
+            <MdLightMode className="theme-icon" /> :
+            <MdOutlineDarkMode className="theme-icon" />
         }
         </button>
     );

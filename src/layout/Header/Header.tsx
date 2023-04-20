@@ -22,7 +22,7 @@ const Header: FC = () => {
        <motion.div className="header" ref={ref} style={{opacity, scale: scalePercentage, filter: blur}}>
             <h1>welcome,</h1>
             <h1>to my portfolio</h1>
-            <motion.p>by silvan dubach</motion.p>
+            <p>by silvan dubach</p>
        </motion.div>
     );
 };

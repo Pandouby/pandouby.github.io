@@ -2,20 +2,22 @@ $themes: (
   light: (
     primaryColor: #e8e8e8,
     secondaryColor: #fff,
-    accentColor: rgb(115, 201, 255),
+    accentColor: #9192FF,
     boxShadowColor: rgb(159, 159, 159),
     headerBackgroundImg: '../images/header-bg-light.svg',
     textColor: #000,
     toggleBackground: #dfe4ea,
+    percentageColor: rgb(65, 65, 65),
   ),
   dark: (
     primaryColor: #2D3138,
     secondaryColor: #242728,
     boxShadowColor: rgb(25, 25, 25),
-    accentColor: rgb(19, 83, 180),
+    accentColor: #797ad5,
     headerBackgroundImg: '../images/header-bg-dark.svg',
     textColor: #eff2f7,
-    toggleBackground: #606071,
+    toggleBackground: #565664,
+    percentageColor: #464c56,
   ),
 );
 

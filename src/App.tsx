@@ -1,12 +1,14 @@
-import { FC, useRef, useState } from "react";
+import { FC, useState } from "react";
 import { ThemeContext } from "./contexts/theme-context";
 import "./App.scss";
 import MainContainer from "./layout/MainContainer";
 import Card from "./layout/Card/Card";
 import ThemeButton from "./layout/Button/ThemeButton";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "./layout/Header/Header";
 import LevelBar from "./layout/LevelBar/LevelBar";
+import ProjectSection from "./layout/ProjectSection/ProjectSection";
+import { FaJava } from 'react-icons/fa';
+import { SiJavascript, SiReact, SiSpring, SiHtml5, SiCss3, SiTypescript } from 'react-icons/si';
 
 const App: FC = () => {
   const isBrowserDefaulDark = () =>
@@ -21,13 +23,13 @@ const App: FC = () => {
   const [theme, setTheme] = useState(getDefaultTheme());
 
   const skills = [
-    { skill: "JavaScript", level: 50 },
-    { skill: "Java", level: 60 },
-    { skill: "React", level: 50 },
-    { skill: "Spring Boot", level: 40 },
-    { skill: "HTML", level: 80 },
-    { skill: "CSS", level: 70 },
-    { skill: "TypeScript", level: 50 },
+    { skill: <FaJava className="icon-container"/>, level: 50 },
+    { skill: <SiJavascript className="icon-container"/>, level: 60 },
+    { skill: <SiReact className="icon-container"/>, level: 50 },
+    { skill: <SiSpring className="icon-container"/>, level: 40 },
+    { skill: <SiHtml5 className="icon-container"/>, level: 80 },
+    { skill: <SiCss3 className="icon-container"/>, level: 70 },
+    { skill: <SiTypescript className="icon-container"/>, level: 50 },
   ];
 
   return (
@@ -38,13 +40,13 @@ const App: FC = () => {
       />
       <div className={`theme-${theme}`}>
         <MainContainer>
-          <Header />
+          <div className="section header-section">
+            <Header />
+          </div>
           
           <ThemeButton />
 
-          <div className="space"></div>
-
-          <div className="skill-section">
+          <div className="section skill-section">
             <div className="skill-text">
               <h2>My Skills</h2>
               <p>
@@ -61,7 +63,11 @@ const App: FC = () => {
             </div>
           </div>
 
-          <div className="space"></div>
+          <ProjectSection/>
+
+          <div className="project-section">
+
+          </div>
         </MainContainer>
       </div>
     </ThemeContext.Provider>

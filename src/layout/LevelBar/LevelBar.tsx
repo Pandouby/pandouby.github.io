@@ -20,10 +20,11 @@ const LevelBar: FC<LevelBarProps> = ({title, percentage}) => {
 
     return(
         <motion.div className="level-bar-container" ref={ref} >
-            {title && <div className="level-bar-title" >{title}</div>}
+            {title && title}
             <div className="level-bar-wrapper" >
                 <motion.div className="level-bar infill" style={{ width: widthPercent }}></motion.div>
                 <div className="level-bar background"></div>
+                <span>{percentage}%</span>
             </div>
         </motion.div>
     );

@@ -9,9 +9,7 @@ interface MainContainerProps {
 const MainContainer: FC<MainContainerProps> = ({ children }) => {
   return (
     <div className="main-container">
-      <div className="content">
-        {children}
-      </div>
+      {children}
       <Footer />
     </div>
   );
