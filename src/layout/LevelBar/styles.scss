@@ -14,6 +14,7 @@
   width: 100%;
   height: 15px;
   display: flex;
+  user-select: none;
 }
 
 .level-bar {
@@ -31,6 +32,8 @@
   width: 100%;
   display: flex;
 }
+
+
 
 .level-bar-wrapper span {
   width: 100%;
@@ -65,3 +68,4 @@
   position: absolute;
   z-index: 100;
 }
+

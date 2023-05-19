@@ -46,6 +46,9 @@
 }
 
 .card-content {
+    @include themify($themes) {
+        color: themed('textColor');
+    }
     padding: 0 2rem 2rem 2rem;
 }
 
