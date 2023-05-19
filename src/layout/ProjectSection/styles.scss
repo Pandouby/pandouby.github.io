@@ -8,12 +8,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 60;
+  background-color: transparent;
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 
 .project-section .project-title {
   @include themify($themes) {
-    color: themed("textColor");
+    color: themed("projectTitleColor");
   }
   width: 100%;
   position: static;
@@ -21,11 +24,8 @@
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
-  font-size: 19vw;
+  font-size: 20vw;
   line-height: 10.6vw;
   letter-spacing: -0.5vw;
-}
-
-.projects-wrapper {
-  display: block;
+  user-select: none;
 }

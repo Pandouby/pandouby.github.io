@@ -65,8 +65,10 @@ const App: FC = () => {
 
           <ProjectSection/>
 
-          <div className="project-section">
-
+          <div className="projects-wrapper">
+            <Card title="Game"> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
           </div>
         </MainContainer>
       </div>

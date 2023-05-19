@@ -8,6 +8,7 @@ $themes: (
     textColor: #000,
     toggleBackground: #dfe4ea,
     percentageColor: rgb(65, 65, 65),
+    projectTitleColor: #fff
   ),
   dark: (
     primaryColor: #2D3138,
@@ -18,6 +19,7 @@ $themes: (
     textColor: #eff2f7,
     toggleBackground: #565664,
     percentageColor: #464c56,
+    projectTitleColor: #fff
   ),
 );
 
@@ -43,3 +45,7 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
+
+//accent light
+//#9192FF
+

@@ -2,6 +2,7 @@ import { FC, useContext } from "react";
 import { ThemeContext } from '../../contexts/theme-context';
 import "./styles.scss"
 import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md'
+import { motion } from "framer-motion";
 
 const ThemeButton: FC = () => {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -13,12 +14,12 @@ const ThemeButton: FC = () => {
     };
 
     return(
-        <button className="theme-button" onClick={handleThemeChange}>
+        <motion.button className="theme-button" onClick={handleThemeChange} layout>
             {theme === 'light' ? 
             <MdLightMode className="theme-icon" /> :
             <MdOutlineDarkMode className="theme-icon" />
         }
-        </button>
+        </motion.button>
     );
 }
 
