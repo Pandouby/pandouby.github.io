@@ -9,6 +9,7 @@ import LevelBar from "./layout/LevelBar/LevelBar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
 import { FaJava } from 'react-icons/fa';
 import { SiJavascript, SiReact, SiSpring, SiHtml5, SiCss3, SiTypescript } from 'react-icons/si';
+import ParalexCard from "./layout/Card/ParalexCard";
 
 const App: FC = () => {
   const isBrowserDefaulDark = () =>
@@ -66,7 +67,27 @@ const App: FC = () => {
           <ProjectSection/>
 
           <div className="projects-wrapper">
-            <Card title="Game"> 
+            <Card title="Game" offset={-150} style={{x: 200}}> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
+
+            <Card title="Game" offset={600} style={{x: -300}}> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
+
+            <Card title="Game" offset={-200} style={{x: -100}}> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
+
+            <Card title="Game" offset={400} style={{x: 340}}> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
+
+            <Card title="Game" offset={550} style={{x: -280}}> 
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
+            </Card>
+
+            <Card title="Game" style={{y: -200, x: 60}}> 
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
             </Card>
           </div>

@@ -8,15 +8,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 60;
-  background-color: transparent;
-  mix-blend-mode: difference;
+  //z-index: 60;
+  //background-color: transparent;
+  //mix-blend-mode: difference;
   pointer-events: none;
 }
 
 .project-section .project-title {
   @include themify($themes) {
-    color: themed("projectTitleColor");
+    color: themed("textColor");
   }
   width: 100%;
   position: static;

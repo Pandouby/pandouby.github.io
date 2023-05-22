@@ -1,9 +1,9 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react";
 import "./styles.scss"
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 interface LevelBarProps{
-    title?: string;
+    title?: ReactNode;
     percentage: number;
 }
 
