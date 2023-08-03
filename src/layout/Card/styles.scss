@@ -4,6 +4,7 @@
     position: relative;
     width: 420px;
     height: 420px;
+    transition: width 0.3s, height 0.3s;
 }
 
 .card {
@@ -50,4 +51,11 @@
     }
     padding: 0 2rem 2rem 2rem;
 }
+
+.card-wrapper[data-isOpen="true"] {
+    width: 840px;
+    height: 630px;
+    z-index: 100;
+}
+
 

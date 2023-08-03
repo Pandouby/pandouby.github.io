@@ -23,7 +23,6 @@ const Header: FC = () => {
             <h1>welcome,</h1>
             <h1>to my portfolio</h1>
             <p>by silvan dubach</p>
-            <hey></hey>
        </motion.div>
     );
 };
