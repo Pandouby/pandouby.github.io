@@ -1,10 +1,10 @@
 import { Octokit } from "@octokit/core";
-import repoConfig from "./repoConfig.json";
+import configData from "../config/configData.json";
 import { useEffect, useState } from "react";
 
 export function useGetRepoLanguages() {
-  const repoNames = repoConfig.repoUrls;
-  const repoAuthToken = repoConfig.authToken;
+  const repoNames = configData.repoUrls;
+  const repoAuthToken = configData.authToken;
 
   const [repoData, setRepoData] = useState<any>();
 

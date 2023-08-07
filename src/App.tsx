@@ -5,6 +5,7 @@ import MainContainer from "./layout/MainContainer";
 import Card from "./layout/Card/Card";
 import ThemeButton from "./layout/Button/ThemeButton";
 import Header from "./layout/Header/Header";
+import configData from "./config/configData.json";
 import LevelBar from "./layout/LevelBar/LevelBar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
 import { FaJava } from 'react-icons/fa';
