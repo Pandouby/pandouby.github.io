@@ -29,3 +29,53 @@
         box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
 }
+
+.button {
+    width: 100%;
+    height: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10;
+    border: none;
+    border-radius: 0.6rem;
+    @include themify($themes) {
+        background-color: themed('background');
+        color: themed('textColor');
+    }
+    transition: 0.2s;
+    margin: 0.2rem;
+}
+
+.button:hover {
+    @include themify($themes) {
+        box-shadow: 5px 5px 5px themed('boxShadowColor');
+    }
+}
+
+.linkButton {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10;
+    border: none;
+    border-radius: 0.6rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(99, 165, 219);
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('background');
+    }
+    transition: 0.2s;
+    margin: 0.2rem;
+}
+
+.linkButton:hover {
+    @include themify($themes) {
+        box-shadow: 5px 5px 5px themed('boxShadowColor');
+    }
+}
+

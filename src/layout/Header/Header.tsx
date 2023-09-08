@@ -1,30 +1,50 @@
 import { FC, useRef } from "react";
-import "./styles.scss"
+import "./styles.scss";
 import { delay, motion, useScroll, useTransform } from "framer-motion";
 
 const Header: FC = () => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end start"],
-    });
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["center center", "end start"],
+  });
 
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-    const scale = useTransform(scrollYProgress, [0, 1], [100, 50]);
-    const scalePercentage = useTransform(scale, (s) => `${s}%`);
-    const blurValue = useTransform(scrollYProgress, [0, 1], [0, 5]);
-    const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const translateNeg = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const translateXNeg = useTransform(translateNeg, (x) => `translateX(${x}px)`);
+  const translatePos = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const translateXPos = useTransform(translatePos, (x) => `translateX(${x}px)`);
+  const blurValue = useTransform(scrollYProgress, [0, 1], [0, 5]);
+  const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
 
-    
-    console.log(scrollYProgress);
-
-    return(
-       <motion.div className="header" ref={ref} style={{opacity, scale: scalePercentage, filter: blur}}>
-            <h1>welcome,</h1>
-            <h1>to my portfolio</h1>
-            <p>by silvan dubach</p>
-       </motion.div>
-    );
+  return (
+    <div className="header">
+      <h1>
+        <motion.span
+          ref={ref}
+          style={{ opacity, transform: translateXNeg}}
+          className="titleSpan"
+        >
+          be creative
+        </motion.span>
+        <motion.span
+          ref={ref}
+          style={{ opacity, transform: translateXPos}}
+          className="titleSpan"
+        >
+          change things
+        </motion.span>
+        <motion.span
+          ref={ref}
+          style={{ opacity, transform: translateXNeg}}
+          className="titleSpan"
+        >
+          for the better
+          <span><p>by silvan dubach</p></span>
+        </motion.span>
+      </h1>
+    </div>
+  );
 };
 
 export default Header;

@@ -1,49 +1,119 @@
-import { FC, ReactNode, useRef, useState } from "react";
+import { FC, useState } from "react";
 import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
+import axios from "axios";
+import Button from "../Button/button";
+import Skeleton from "@mui/material/Skeleton";
+import configData from "../../config/configData.json"
+import { SiGithub } from "react-icons/si";
+import LinkButton from "../Button/LinkButton";
 
 interface ProjectCardProps {
-  title: string;
+  project: any; // change to interface of project -> title and url
   children: any;
   offset?: number;
   style?: any;
-  data?: any;
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ title, children, data }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [projectData, setProjectData] = useState(0);
+  const token = configData.authToken;
+
   const handleClick = () => {
     setIsOpen(!isOpen);
+    if (!isOpen && !projectData) {
+      axios
+        .get(`https://api.github.com/repos/pandouby/${project.url}/languages`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          setProjectData(res.data);
+        });
+    }
+  };
+
+  const values: number[] = Object.values(projectData!);
+
+  let totalValue = 0;
+  values.forEach((value) => {
+    totalValue = totalValue + value;
+  });
+
+  const percentages = values.map((value) => {
+    return Math.round((value / totalValue) * 100);
+  });
+
+  const data = {
+    labels: Object.keys(projectData!),
+    datasets: [
+      {
+        label: "% of project",
+        data: percentages,
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        radius: "90%",
+        cutout: "60%",
+        hoverOffset: 20,
+      },
+    ],
   };
 
   const options = {
     plugins: {
       title: {
         display: true,
-        text: 'Used Technologies',
+        text: "Used Technologies",
       },
       legend: {
         display: true,
-      }
+      },
     },
     responsive: true,
-    aspectRatio: 3/1,
+    aspectRatio: 3 / 1,
     layout: {
-        padding: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-        }
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
     },
     cutoutPercentage: 90,
   };
 
   return (
-    <Card title={title} data-isOpen={isOpen} onClick={handleClick}>
+    <Card title={project.title} data-isopen={isOpen}>
       {children}
-      {isOpen && <Doughnut className="doughnut" data={data} options={options}/>}
+      {isOpen && !projectData ? (
+        <>
+          <Skeleton variant="text" sx={{ fontSize: '2rem' }} animation={"wave"} />
+          <Skeleton variant="rounded" height={200} width={400} animation={"wave"} />
+        </>
+      ) : isOpen ? (
+        <Doughnut className="doughnut" data={data} options={options} />
+      ) : null}
+      <footer>
+        <Button className="button-more" onClick={handleClick}>read more</Button>
+        <LinkButton className="button-github" url={`https://github.com/pandouby/${project.url}`}><SiGithub/></LinkButton>
+      </footer>
     </Card>
   );
 };

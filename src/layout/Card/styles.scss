@@ -23,15 +23,19 @@
     @include themify($themes) {
         background-color: themed('secondaryColor');
     }
+    @include themify($themes) {
+        box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.526);
+    }
 }
 
 .card-wrapper .card-back {
     z-index: 49;
     @include themify($themes) {
         background-color: themed('accentColor');
+        //background: linear-gradient(0deg, themed('accentColor') 0%, rgb(242, 88, 119) 100%);
     }
     @include themify($themes) {
-        box-shadow: 5px 5px 5px themed('boxShadowColor');
+        box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.526);
     }
 
     transform-origin: bottom left;
@@ -43,19 +47,34 @@
         color: themed('textColor');
     }
     text-align: center;
+    margin: 0;
 }
 
 .card-content {
     @include themify($themes) {
         color: themed('textColor');
     }
-    padding: 0 2rem 2rem 2rem;
+    height: 85%;
+    padding: 2rem;
 }
 
-.card-wrapper[data-isOpen="true"] {
+.card-wrapper[data-isopen="true"] {
     width: 840px;
     height: 630px;
     z-index: 100;
+}
+
+.card footer {
+    display: flex;
+    width: 100%;
+    padding-top: 9rem;
+}
+
+footer .button-more {
+    width: 80%;
+}
+footer .button-github{
+   width: 20%;
 }
 
 

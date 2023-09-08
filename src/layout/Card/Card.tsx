@@ -1,6 +1,8 @@
 import { FC, ReactNode, useRef, useState } from "react";
 import "./styles.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Button from "../Button/button";
+import { SiGithub } from "react-icons/si";
 
 interface CardProps {
   title: string;
@@ -15,7 +17,6 @@ const Card: FC<CardProps> = ({
   children,
   offset = 0,
   style,
-  onClick,
   ...props
 }) => {
   const ref = useRef(null);
@@ -35,12 +36,13 @@ const Card: FC<CardProps> = ({
       className={"card-wrapper"}
       ref={ref}
       style={{ y: yOffset, scale: scalePercentage, opacity, ...style }}
-      onClick={onClick}
       {...props}
     >
       <div className="card card-front">
-        <h2 className="card-title">{title}</h2>
-        <div className="card-content">{children}</div>
+        <div className="card-content">
+          <h2 className="card-title">{title}</h2>
+          {children}
+        </div>
       </div>
       <div className="card card-back"></div>
     </motion.div>
