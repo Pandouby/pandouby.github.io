@@ -55,6 +55,9 @@
         color: themed('textColor');
     }
     height: 85%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 2rem;
 }
 
@@ -64,10 +67,16 @@
     z-index: 100;
 }
 
+.projectCard {
+    margin: 3rem 0 3rem 0;
+}
+
 .card footer {
     display: flex;
-    width: 100%;
-    padding-top: 9rem;
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    padding: 0 2rem 2rem 2rem;
 }
 
 footer .button-more {

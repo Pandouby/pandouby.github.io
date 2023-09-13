@@ -1,0 +1,7 @@
+@import '/src/styles/theme-variables.scss';
+
+.timeline-element {
+    @include themify($themes) {
+        color: themed('textColor');
+    }
+}

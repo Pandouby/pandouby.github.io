@@ -15,6 +15,7 @@ import { Doughnut } from 'react-chartjs-2';
 import ProjectCard from "./layout/Card/ProjectCard";
 import { useGetRepoLanguages } from "./api/useGetRepoLaguages";
 import axios from "axios";
+import TimeLine from "./layout/Timeline/TimeLine";
 
 
 const App: FC = () => {
@@ -73,6 +74,8 @@ const App: FC = () => {
             </div>
           </div>
 
+          <TimeLine />
+
           <ProjectSection/>
 
           <div className="projects-wrapper">
@@ -83,26 +86,6 @@ const App: FC = () => {
                 </ProjectCard>
               );
             })}
-
-            <Card title="Game" offset={600} style={{x: -300}}> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
-            </Card>
-
-            <Card title="Game" offset={-200} style={{x: -100}}> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
-            </Card>
-
-            <Card title="Game" offset={400} style={{x: 340}}> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
-            </Card>
-
-            <Card title="Game" offset={550} style={{x: -280}}> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
-            </Card>
-
-            <Card title="Game" style={{y: -200, x: 60}}> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, facere distinctio! Velit minima voluptatem veniam magnam ex culpa laboriosam labore voluptatum optio incidunt quas, quam a beatae consequuntur, dolores ipsa.</p>
-            </Card>
           </div>
         </MainContainer>
       </div>

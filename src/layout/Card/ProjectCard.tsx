@@ -71,7 +71,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
         ],
         radius: "90%",
         cutout: "60%",
-        hoverOffset: 20,
+        hoverOffset: 25,
       },
     ],
   };
@@ -100,18 +100,18 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   };
 
   return (
-    <Card title={project.title} data-isopen={isOpen}>
+    <Card className={"projectCard"} title={project.title} data-isopen={isOpen}>
       {children}
       {isOpen && !projectData ? (
         <>
-          <Skeleton variant="text" sx={{ fontSize: '2rem' }} animation={"wave"} />
-          <Skeleton variant="rounded" height={200} width={400} animation={"wave"} />
+          <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={250} animation={"wave"} />
+          <Skeleton variant="rounded" height={250} width={250} animation={"wave"} />
         </>
       ) : isOpen ? (
         <Doughnut className="doughnut" data={data} options={options} />
       ) : null}
       <footer>
-        <Button className="button-more" onClick={handleClick}>read more</Button>
+        <Button className="button-more" onClick={handleClick}>{isOpen ? "show less" : "show more"}</Button>
         <LinkButton className="button-github" url={`https://github.com/pandouby/${project.url}`}><SiGithub/></LinkButton>
       </footer>
     </Card>

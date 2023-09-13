@@ -39,7 +39,7 @@
     border: none;
     border-radius: 0.6rem;
     @include themify($themes) {
-        background-color: themed('background');
+        background-color: themed('primaryColor');
         color: themed('textColor');
     }
     transition: 0.2s;
@@ -64,10 +64,9 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: rgb(99, 165, 219);
     @include themify($themes) {
-        color: themed('textColor');
-        background-color: themed('background');
+        color: themed('secondaryColor');
+        background-color: themed('accentColor');
     }
     transition: 0.2s;
     margin: 0.2rem;

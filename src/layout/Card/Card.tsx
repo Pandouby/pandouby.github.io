@@ -1,22 +1,20 @@
-import { FC, ReactNode, useRef, useState } from "react";
+import { FC, useRef } from "react";
 import "./styles.scss";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Button from "../Button/button";
-import { SiGithub } from "react-icons/si";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
 interface CardProps {
-  title: string;
+  title?: string;
   children: any;
-  offset?: number;
-  style?: any;
-  onClick?: any;
+  style?: {};
+  onClick?: () => void;
+  className?: string;
 }
 
 const Card: FC<CardProps> = ({
   title,
   children,
-  offset = 0,
   style,
+  className,
   ...props
 }) => {
   const ref = useRef(null);
@@ -25,17 +23,18 @@ const Card: FC<CardProps> = ({
     offset: ["start end", "end start"],
   });
 
-  const yOffset = useTransform(scrollYProgress, [0, 1], [0, offset * -1]);
-  const scale = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
+  const scale = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, 100, 100, 0]);
   const scalePercentage = useTransform(scale, (s) => `${s}%`);
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [0, 1, 1, 0]);
+  const blurValue = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [5, 0, 0, 5]);
+  const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
 
   return (
     <motion.div
       layout
-      className={"card-wrapper"}
+      className={`card-wrapper ${className}`}
       ref={ref}
-      style={{ y: yOffset, scale: scalePercentage, opacity, ...style }}
+      style={{ scale: scalePercentage, opacity, ...style, filter: blur}}
       {...props}
     >
       <div className="card card-front">
