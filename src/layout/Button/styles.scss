@@ -15,7 +15,7 @@
     width: 50px;
     border-radius: 50%;
     @include themify($themes) {
-        background-color: themed('secondaryColor');
+        background-color: themed('primaryColor');
         color: themed('textColor');
     }
 }
@@ -39,7 +39,7 @@
     border: none;
     border-radius: 0.6rem;
     @include themify($themes) {
-        background-color: themed('primaryColor');
+        background-color: themed('backgroundColor');
         color: themed('textColor');
     }
     transition: 0.2s;
@@ -65,8 +65,8 @@
     align-items: center;
     justify-content: center;
     @include themify($themes) {
-        color: themed('secondaryColor');
-        background-color: themed('accentColor');
+        color: themed('primaryColor');
+        background-color: themed('secondaryColor');
     }
     transition: 0.2s;
     margin: 0.2rem;

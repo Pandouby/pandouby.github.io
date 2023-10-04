@@ -1,22 +1,32 @@
 $themes: (
   light: (
-    primaryColor: #e8e8e8,
-    secondaryColor: #fff,
-    //accentColor: #9192FF,
-    // accentColor: #c8c8f9,
-    //accentColor: #0099ff,
-    accentColor: rgba(33, 150, 243, 1),
+    backgroundColor: #e7ecf4,
+    primaryColor: #f9fcff,
+    secondaryColor: rgba(33, 150, 243),
     boxShadowColor: rgba(118, 118, 118, 0.419),
-    textColor: #000,
+    textColor: #191717,
+    toggleBackground: #dfe4ea,
+    percentageColor: rgb(65, 65, 65),
+    projectTitleColor: #fff,
+    linkColor: rgba(33, 90, 183),
+    
+    /*
+    backgroundColor: #fffdfa,
+    primaryColor: #ebebeb,
+    secondaryColor: #4284f5,
+    accentColor: #586d8d,
+    boxShadowColor: rgba(118, 118, 118, 0.419),
+    textColor: #271902,
     toggleBackground: #dfe4ea,
     percentageColor: rgb(65, 65, 65),
     projectTitleColor: #fff
+    */
   ),
   dark: (
-    primaryColor: #2D3138,
-    secondaryColor: #242728,
-    boxShadowColor: rgb(25, 25, 25),
-    accentColor: #797ad5,
+    backgroundColor: #2D3138,
+    primaryColor: #242728,
+    boxShadowColor: rgba(33, 33, 33, 0.8),
+    secondaryColor: rgb(28, 128, 209),
     textColor: #eff2f7,
     toggleBackground: #565664,
     percentageColor: #464c56,

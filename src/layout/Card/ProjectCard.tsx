@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
@@ -12,11 +12,10 @@ import LinkButton from "../Button/LinkButton";
 interface ProjectCardProps {
   project: any; // change to interface of project -> title and url
   children: any;
-  offset?: number;
   style?: any;
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ project, children, yScroll }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [projectData, setProjectData] = useState(0);
   const token = configData.authToken;
@@ -100,7 +99,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   };
 
   return (
-    <Card className={"projectCard"} title={project.title} data-isopen={isOpen}>
+    <Card className={"projectCard"} title={project.title} data-isopen={isOpen} >
       {children}
       {isOpen && !projectData ? (
         <>

@@ -21,21 +21,19 @@
     height: 100%;
     width: 100%;
     @include themify($themes) {
-        background-color: themed('secondaryColor');
+        background-color: themed('primaryColor');
     }
     @include themify($themes) {
-        box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.526);
+        box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
 }
 
 .card-wrapper .card-back {
     z-index: 49;
     @include themify($themes) {
-        background-color: themed('accentColor');
-        //background: linear-gradient(0deg, themed('accentColor') 0%, rgb(242, 88, 119) 100%);
-    }
-    @include themify($themes) {
-        box-shadow: 5px 5px 5px rgba(75, 75, 75, 0.526);
+        background-color: themed('secondaryColor');
+        //background: linear-gradient(0deg, themed('secondaryColor') 0%, rgb(242, 88, 119) 100%);
+        box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
 
     transform-origin: bottom left;

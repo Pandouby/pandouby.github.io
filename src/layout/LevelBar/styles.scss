@@ -28,7 +28,7 @@
 .level-bar.background {
   z-index: 49;
   @include themify($themes) {
-    background-color: themed("primaryColor");
+    background-color: themed("backgroundColor");
   }
   width: 100%;
   display: flex;
@@ -55,13 +55,13 @@
 .level-bar.infill {
   z-index: 50;
   @include themify($themes) {
-    background-color: themed("accentColor");
+    background-color: themed("secondaryColor");
   }
 }
 
 .level-bar-container .icon-container {
   @include themify($themes) {
-    background-color: themed("accentColor");
+    background-color: themed("secondaryColor");
   }
   border-radius: 50%;
   padding: 0.2rem;

@@ -5,3 +5,9 @@
         color: themed('textColor');
     }
 }
+
+.timeline-element h3 a {
+    @include themify($themes) {
+        color: themed('linkColor');
+    }
+}

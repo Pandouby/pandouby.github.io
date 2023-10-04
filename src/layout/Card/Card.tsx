@@ -1,6 +1,6 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import "./styles.scss";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { MotionValue, motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
 interface CardProps {
   title?: string;

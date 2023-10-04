@@ -2,7 +2,7 @@
 
 .main-container {
   @include themify($themes) {
-    background: themed('primaryColor');
+    background: themed('backgroundColor');
   }
   width: 100%;
 }
@@ -13,7 +13,7 @@
   height: 78px;
   display: flex;
   @include themify($themes) {
-    background: themed('secondaryColor');
+    background: themed('primaryColor');
     color: themed('textColor');
   }
   .footer-content {
