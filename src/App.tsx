@@ -30,12 +30,12 @@ import axios from "axios";
 import TimeLine from "./layout/Timeline/TimeLine";
 
 const App: FC = () => {
-  const isBrowserDefaulDark = () =>
+  const isBrowserDefaultDark = () =>
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const getDefaultTheme = (): string => {
     const localStorageTheme = localStorage.getItem("default-theme");
-    const browserDefault = isBrowserDefaulDark() ? "dark" : "light";
+    const browserDefault = isBrowserDefaultDark() ? "dark" : "light";
     return localStorageTheme || browserDefault;
   };
 

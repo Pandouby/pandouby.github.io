@@ -9,13 +9,18 @@ import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";
 import LinkButton from "../Button/LinkButton";
 
+interface Project {
+  title: string;
+  url: string;
+}
+
 interface ProjectCardProps {
-  project: any; // change to interface of project -> title and url
+  project: Project;
   children: any;
   style?: any;
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ project, children, yScroll }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [projectData, setProjectData] = useState(0);
   const token = configData.authToken;
@@ -123,6 +128,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children, yScroll }) => {
       ) : isOpen ? (
         <Doughnut className="doughnut" data={data} options={options} />
       ) : null}
+
       <footer>
         <Button className="button-more" onClick={handleClick}>
           {isOpen ? "show less" : "show more"}
