@@ -5,7 +5,7 @@ import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
 import Button from "../Button/button";
 import Skeleton from "@mui/material/Skeleton";
-import configData from "../../config/configData.json"
+import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";
 import LinkButton from "../Button/LinkButton";
 
@@ -22,13 +22,17 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children, yScroll }) => {
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
     if (!isOpen && !projectData) {
       axios
-        .get(`https://api.github.com/repos/pandouby/${project.url}/languages`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        })
+        .get(
+          `https://api.github.com/repos/pandouby/${project.url}/languages`,
+          config
+        )
         .then((res) => {
           setProjectData(res.data);
         });
@@ -99,19 +103,35 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children, yScroll }) => {
   };
 
   return (
-    <Card className={"projectCard"} title={project.title} data-isopen={isOpen} >
+    <Card className={"projectCard"} title={project.title} data-isopen={isOpen}>
       {children}
       {isOpen && !projectData ? (
         <>
-          <Skeleton variant="text" sx={{ fontSize: '2rem' }} width={250} animation={"wave"} />
-          <Skeleton variant="rounded" height={250} width={250} animation={"wave"} />
+          <Skeleton
+            variant="text"
+            sx={{ fontSize: "2rem" }}
+            width={250}
+            animation={"wave"}
+          />
+          <Skeleton
+            variant="rounded"
+            height={250}
+            width={250}
+            animation={"wave"}
+          />
         </>
       ) : isOpen ? (
         <Doughnut className="doughnut" data={data} options={options} />
       ) : null}
       <footer>
-        <Button className="button-more" onClick={handleClick}>{isOpen ? "show less" : "show more"}</Button>
-        <LinkButton className="button-github" url={`https://github.com/pandouby/${project.url}`}><SiGithub/></LinkButton>
+        <Button className="button-more" onClick={handleClick}>
+          {isOpen ? "show less" : "show more"}
+        </Button>
+        <LinkButton
+          className="button-github"
+          url={`https://github.com/pandouby/${project.url}`}>
+          <SiGithub />
+        </LinkButton>
       </footer>
     </Card>
   );
