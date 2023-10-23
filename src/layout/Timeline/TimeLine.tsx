@@ -12,7 +12,7 @@ import variables from "/src/styles/theme-variables.scss";
 
 const TimeLine: FC = () => {
   return (
-    <VerticalTimeline>
+    <VerticalTimeline lineColor={'rgb(33, 150, 243)'}>
       <VerticalTimelineElement
         className="timeline-element"
         contentStyle={{ background: "rgb(33, 150, 243)" }}

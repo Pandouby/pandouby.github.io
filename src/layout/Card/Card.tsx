@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import "./styles.scss";
-import { MotionValue, motion, motionValue, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { MotionValue, motion, motionValue, useMotionValue, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 interface CardProps {
   title?: string;
@@ -8,7 +8,7 @@ interface CardProps {
   style?: {};
   onClick?: () => void;
   className?: string;
-  onPageEnd?: () => void;
+  onPageEnd: () => void;
 }
 
 const Card: FC<CardProps> = ({
@@ -31,10 +31,10 @@ const Card: FC<CardProps> = ({
   const blurValue = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [5, 0, 0, 5]);
   const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
 
-  useEffect(() => {
-    if(scrollYProgress === motionValue. && onPageEnd) {
-      onPageEnd();
-    }
+  useMotionValueEvent(scrollYProgress, "animationCancel", () => {
+    console.log("test");
+    
+    onPageEnd();
   })
 
   return (

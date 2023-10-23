@@ -108,7 +108,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   };
 
   return (
-    <Card className={"projectCard"} title={project.title} data-isopen={isOpen}>
+    <Card className={"projectCard"} title={project.title} data-isopen={isOpen} onPageEnd={() => setIsOpen(false)}>
       {children}
       {isOpen && !projectData ? (
         <>
