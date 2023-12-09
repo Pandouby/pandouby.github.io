@@ -1,6 +1,6 @@
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FC, useRef } from "react";
 import "./styles.scss";
-import { delay, motion, useScroll, useTransform } from "framer-motion";
 
 const Header: FC = () => {
   const ref = useRef(null);
@@ -16,9 +16,12 @@ const Header: FC = () => {
   const translateXPos = useTransform(translatePos, (x) => `translateX(${x}px)`);
   const blurValue = useTransform(scrollYProgress, [0, 1], [0, 5]);
   const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
+  const position = useTransform(scrollYProgress, (pos) => {
+    return pos === 1 ? "relative" : "fixed";
+  });
 
   return (
-    <div className="header">
+    <motion.div className="header" style={{position}}>
       <h1>
         <motion.span
           ref={ref}
@@ -37,13 +40,13 @@ const Header: FC = () => {
         <motion.span
           ref={ref}
           style={{ opacity, transform: translateXNeg}}
-          className="titleSpan"
+          className="titleSpan"         
         >
           for the better
           <span><p>by silvan dubach</p></span>
         </motion.span>
       </h1>
-    </div>
+    </motion.div>
   );
 };
 

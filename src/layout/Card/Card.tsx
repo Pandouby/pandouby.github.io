@@ -8,7 +8,7 @@ interface CardProps {
   style?: {};
   onClick?: () => void;
   className?: string;
-  onPageEnd: () => void;
+  onPageEnd?: () => void;
 }
 
 const Card: FC<CardProps> = ({
@@ -34,7 +34,7 @@ const Card: FC<CardProps> = ({
   useMotionValueEvent(scrollYProgress, "animationCancel", () => {
     console.log("test");
     
-    onPageEnd();
+    onPageEnd && onPageEnd();
   })
 
   return (

@@ -77,7 +77,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)",
         ],
-        radius: "90%",
+        radius: "80%",
         cutout: "60%",
         hoverOffset: 25,
       },
@@ -95,7 +95,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
       },
     },
     responsive: true,
-    aspectRatio: 3 / 1,
+    aspectRatio: 1,
     layout: {
       padding: {
         left: 0,
@@ -126,7 +126,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
           />
         </>
       ) : isOpen ? (
-        <Doughnut className="doughnut" data={data} options={options} />
+        <Doughnut className="doughnut" data={data} options={options} height={'400px'} width={'400px'}/>
       ) : null}
 
       <footer>
