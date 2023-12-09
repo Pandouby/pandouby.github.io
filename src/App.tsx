@@ -2,12 +2,12 @@ import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import { FC, useState } from "react";
 import { FaJava } from "react-icons/fa";
 import {
-  SiDocker,
-  SiGit,
-  SiJira,
-  SiReact,
-  SiSpring,
-  SiTypescript
+	SiDocker,
+	SiGit,
+	SiJira,
+	SiReact,
+	SiSpring,
+	SiTypescript,
 } from "react-icons/si";
 import "./App.scss";
 import { ThemeContext } from "./contexts/theme-context";
@@ -16,6 +16,7 @@ import Card from "./layout/Card/Card";
 import Header from "./layout/Header/Header";
 import LevelBar from "./layout/LevelBar/LevelBar";
 import MainContainer from "./layout/MainContainer";
+import { Progressbar } from "./layout/Progressbar/Progressbar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
 import { SocialStack } from "./layout/Socials/SocialStack";
 import TimeLine from "./layout/Timeline/TimeLine";
@@ -50,12 +51,13 @@ const App: FC = () => {
 				href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 			/>
 			<div className={`theme-${theme}`}>
+      <Progressbar />
 				<MainContainer>
+          <ThemeButton />
+
 					<div className="section header-section">
 						<Header />
 					</div>
-
-					<ThemeButton />
 
 					<div className="section skill-section">
 						<div className="skill-text">

@@ -1,0 +1,13 @@
+@import "/src/styles/theme-variables.scss";
+
+.progressbar {
+	width: 10px;
+	@include themify($themes) {
+		background-color: themed("secondaryColor");
+	}
+	z-index: 100;
+    position: fixed;
+	transform-origin: top left;
+    top: 0;
+	bottom: 0;
+}
