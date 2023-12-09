@@ -1,6 +1,6 @@
+import { motion, useInView, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
 import "./styles.scss";
-import { MotionValue, motion, motionValue, useMotionValue, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 interface CardProps {
   title?: string;
@@ -31,11 +31,14 @@ const Card: FC<CardProps> = ({
   const blurValue = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [5, 0, 0, 5]);
   const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
 
-  useMotionValueEvent(scrollYProgress, "animationCancel", () => {
-    console.log("test");
-    
-    onPageEnd && onPageEnd();
-  })
+  const cardInView = useInView(ref);
+
+  useEffect(() => {
+    if(!cardInView) {
+      onPageEnd && onPageEnd();
+      console.log("test");
+    }
+  }, [cardInView])
 
   return (
     <motion.div

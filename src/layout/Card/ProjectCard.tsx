@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
@@ -8,6 +8,7 @@ import Skeleton from "@mui/material/Skeleton";
 import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";
 import LinkButton from "../Button/LinkButton";
+import { useScroll, useTransform } from "framer-motion";
 
 interface Project {
   title: string;
