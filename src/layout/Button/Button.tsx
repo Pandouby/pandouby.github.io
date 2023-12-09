@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 interface ButtonProps {
 	children: any;
@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ children, onClick, className }) => {
 	return (
-	    <button className={`button ${className}`} onClick={onClick}>
+		<button className={`button ${className}`} onClick={onClick}>
 			{children}
 		</button>
 	);

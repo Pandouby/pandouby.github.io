@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
 import "./styles.scss";
 

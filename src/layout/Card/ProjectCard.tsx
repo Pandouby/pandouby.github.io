@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from "react";
+import { FC, useState } from "react";
 import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
