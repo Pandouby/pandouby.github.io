@@ -9,6 +9,8 @@ interface CardProps {
   onClick?: () => void;
   className?: string;
   onPageEnd?: () => void;
+  width?: string;
+  height?: string;
 }
 
 const Card: FC<CardProps> = ({
@@ -17,6 +19,8 @@ const Card: FC<CardProps> = ({
   style,
   className,
   onPageEnd,
+  width,
+  height,
   ...props
 }) => {
   const ref = useRef(null);
@@ -36,7 +40,6 @@ const Card: FC<CardProps> = ({
   useEffect(() => {
     if(!cardInView) {
       onPageEnd && onPageEnd();
-      console.log("test");
     }
   }, [cardInView])
 
@@ -45,7 +48,7 @@ const Card: FC<CardProps> = ({
       layout
       className={`card-wrapper ${className}`}
       ref={ref}
-      style={{ scale: scalePercentage, opacity, ...style, filter: blur}}
+      style={{ scale: scalePercentage, opacity, ...style, filter: blur, width, height}}
       {...props}
     >
       <div className="card card-front">

@@ -8,7 +8,6 @@ import Skeleton from "@mui/material/Skeleton";
 import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";
 import LinkButton from "../Button/LinkButton";
-import { useScroll, useTransform } from "framer-motion";
 
 interface Project {
   title: string;
