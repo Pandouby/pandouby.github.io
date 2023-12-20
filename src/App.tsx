@@ -18,8 +18,9 @@ import LevelBar from "./layout/LevelBar/LevelBar";
 import MainContainer from "./layout/MainContainer";
 import { Progressbar } from "./layout/Progressbar/Progressbar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
-import { SocialStack } from "./layout/Socials/SocialStack";
 import TimeLine from "./layout/Timeline/TimeLine";
+import { ContactSection } from "./layout/Contact-Section/ContactSection";
+import { LanguageSection } from "./layout/LanguageSection/LanguageSection";
 
 const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -51,9 +52,9 @@ const App: FC = () => {
 				href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 			/>
 			<div className={`theme-${theme}`}>
-      <Progressbar />
+				<Progressbar />
 				<MainContainer>
-          <ThemeButton />
+					<ThemeButton />
 
 					<div className="section header-section">
 						<Header />
@@ -86,7 +87,7 @@ const App: FC = () => {
 
 					<ProjectSection />
 
-					<SocialStack />
+					<ContactSection />
 				</MainContainer>
 			</div>
 		</ThemeContext.Provider>

@@ -1,0 +1,40 @@
+@import "/src/styles/theme-variables.scss";
+
+.social {
+	@include themify($themes) {
+		background-color: themed("primaryColor");
+	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	width: 52px;
+	height: 52px;
+
+	svg {
+		width: 45px;
+		height: 45px;
+	}
+    margin: 1rem;
+}
+
+.social:hover {
+    transition: 0.3s ;
+	@include themify($themes) {
+		box-shadow: 5px 5px 5px themed("boxShadowColor");
+	}
+}
+
+#GitHub {
+    @include themify($themes) {
+		color: themed("textColor");
+	}
+}
+
+.social-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 5rem;
+}
