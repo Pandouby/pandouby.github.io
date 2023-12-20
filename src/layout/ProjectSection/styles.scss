@@ -1,48 +1,49 @@
-@import '/src/styles/theme-variables.scss';
+@import "/src/styles/theme-variables.scss";
 
 .project-section {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  //For color reverse effect
-  //z-index: 60;
-  //background-color: transparent;
-  //mix-blend-mode: difference;
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	//For color reverse effect
+	//z-index: 60;
+	//background-color: transparent;
+	//mix-blend-mode: difference;
 }
 
 .project-title-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0px;
-  pointer-events: none;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: sticky;
+	top: 0px;
+	pointer-events: none;
+	height: 100vh;
 }
 
 .project-section .project-title {
-  @include themify($themes) {
-    color: themed("textColor");
-  }
-  position: static;
-  font-family: Suisseintl, sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 19.5vw;
-  line-height: 10.6vw;
-  letter-spacing: -0.8vw;
-  user-select: none;
+	@include themify($themes) {
+		color: themed("textColor");
+		text-shadow: 5px 5px 5px themed("boxShadowColor");
+	}
+	position: static;
+	font-family: Suisseintl, sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 19.5vw;
+	line-height: 10.6vw;
+	letter-spacing: -0.8vw;
+	user-select: none;
 }
 
 .projects-wrapper {
-  width: 100%;
-  height: 115rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	width: 100%;
+	height: 115rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
