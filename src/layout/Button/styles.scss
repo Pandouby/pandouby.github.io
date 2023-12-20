@@ -25,6 +25,7 @@
 }
 
 .theme-button:hover {
+    transition: 0.2s;
     @include themify($themes) {
         box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
@@ -42,10 +43,10 @@
         background-color: themed('backgroundColor');
         color: themed('textColor');
     }
-    transition: 0.2s;
 }
 
 .button:hover {
+    transition: 0.2s;
     @include themify($themes) {
         box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
@@ -67,11 +68,11 @@
         color: themed('primaryColor');
         background-color: themed('secondaryColor');
     }
-    transition: 0.2s;
     margin: 0.2rem;
 }
 
 .linkButton:hover {
+    transition: 0.2s;
     @include themify($themes) {
         box-shadow: 5px 5px 5px themed('boxShadowColor');
     }
