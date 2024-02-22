@@ -19,7 +19,8 @@ import MainContainer from "./layout/MainContainer";
 import { Progressbar } from "./layout/Progressbar/Progressbar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
 import TimeLine from "./layout/Timeline/TimeLine";
-import { ContactSection } from "./layout/Contact-Section/ContactSection";
+import { SocialSection } from "./layout/SocialSection/SocialSection";
+import { configData } from "./config/config";
 
 const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -34,15 +35,7 @@ const App: FC = () => {
 	const [theme, setTheme] = useState(getDefaultTheme());
 	ChartJS.register(ArcElement, Tooltip, Legend);
 
-	const skills = [
-		{ skill: <SiReact className="icon-container" />, level: 70 },
-		{ skill: <SiTypescript className="icon-container" />, level: 75 },
-		{ skill: <FaJava className="icon-container" />, level: 70 },
-		{ skill: <SiSpring className="icon-container" />, level: 50 },
-		{ skill: <SiGit className="icon-container" />, level: 80 },
-		{ skill: <SiDocker className="icon-container" />, level: 50 },
-		{ skill: <SiJira className="icon-container" />, level: 70 },
-	];
+	const skills = configData.skills;
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
@@ -86,7 +79,7 @@ const App: FC = () => {
 
 					<ProjectSection />
 
-					<ContactSection />
+					<SocialSection />
 				</MainContainer>
 			</div>
 		</ThemeContext.Provider>

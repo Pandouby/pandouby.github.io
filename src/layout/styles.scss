@@ -12,6 +12,7 @@
   z-index: 99;
   height: 78px;
   display: flex;
+  font-weight: 600;
   @include themify($themes) {
     background: themed('primaryColor');
     color: themed('textColor');
@@ -20,5 +21,12 @@
     text-align: center;
     max-width: 1200px;
     margin: auto;
+  }
+
+  span {
+    @include themify($themes) {
+      color: themed('secondaryTextColor');
+    }
+    font-size: small;
   }
 }

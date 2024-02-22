@@ -16,6 +16,7 @@ export const ContactCard: FC = () => {
 						sx={{
 							flexDirection: "row",
 							paddingBottom: "2rem",
+							color: "white",
 						}}
 					>
 						<TextField

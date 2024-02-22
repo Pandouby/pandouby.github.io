@@ -1,23 +1,18 @@
-import { FC, useState } from "react";
+import { FC, ReactElement, useState } from "react";
 import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
 import Button from "../Button/Button";
 import Skeleton from "@mui/material/Skeleton";
-import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";
 import LinkButton from "../Button/LinkButton";
-
-interface Project {
-  title: string;
-  url: string;
-}
+import { Project } from "../../config/config";
 
 interface ProjectCardProps {
   project: Project;
-  children: any;
-  style?: any;
+  children: ReactElement;
+  style?: {};
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
@@ -30,7 +25,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
     if (!isOpen && !projectData) {
       axios
         .get(
-          `https://api.github.com/repos/pandouby/${project.url}/languages`,
+          `https://api.github.com/repos/${project.url}/languages`,
         )
         .then((res) => {
           setProjectData(res.data);
@@ -129,7 +124,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
         </Button>
         <LinkButton
           className="button-github"
-          url={`https://github.com/pandouby/${project.url}`}>
+          url={`https://github.com/${project.url}`}>
           <SiGithub />
         </LinkButton>
       </footer>

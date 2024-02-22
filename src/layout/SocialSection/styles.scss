@@ -1,0 +1,45 @@
+@import "/src/styles/theme-variables.scss";
+
+.social {
+	@include themify($themes) {
+		background-color: themed("primaryColor");
+		color: themed("backgroundColor");
+	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	width: 52px;
+	height: 52px;
+
+	svg {
+		width: 45px;
+		height: 45px;
+	}
+    margin: 1rem;
+}
+
+.social:hover {
+    transition: 0.3s ;
+	@include themify($themes) {
+		box-shadow: 5px 5px 5px themed("boxShadowColor");
+	}
+}
+
+.social-section {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5rem;
+}
+
+.social-stack {
+	width: 40%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+

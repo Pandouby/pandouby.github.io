@@ -1,8 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FC, useRef } from "react";
-import configData from "../../config/configData.json";
 import ProjectCard from "../Card/ProjectCard";
 import "./styles.scss";
+import { Project, configData } from "../../config/config";
 
 interface projectProps {
     title: string;
@@ -10,7 +10,7 @@ interface projectProps {
 }
 
 const ProjectSection: FC = () => {
-	const projects: projectProps[] = configData.projects;
+	const projects: Project[] = configData.projects;
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
