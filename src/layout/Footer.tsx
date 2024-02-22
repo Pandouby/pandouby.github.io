@@ -26,7 +26,7 @@ export const Footer: FC = () => {
 			<div className="footer-content">
 				&copy; {new Date().getFullYear()} | All rights reserved
 				<br />
-				<span>Updated {formateDate(dateOfLastCommit)}</span>
+				{dateOfLastCommit && <span>Updated {formateDate(dateOfLastCommit)}</span>}
 			</div>
 		</footer>
 	);
