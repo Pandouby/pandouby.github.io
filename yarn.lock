@@ -810,6 +810,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-vertical-timeline-component@^3.3.6":
+  "integrity" "sha512-OUvyPXRjXvUD/SNLO0CW0GbIxVF32Ios5qHecMSfw6kxnK1cPULD9NV80EuqZ3WmS/s6BgbcwmN8k4ISb3akhQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-vertical-timeline-component/-/react-vertical-timeline-component-3.3.6.tgz"
+  "version" "3.3.6"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^17.0.0 || ^18.0.0", "@types/react@^18.0.28":
   "integrity" "sha512-TtAxCNrlrBp8GoeEp1npd5g+d/OejJHFxS3OWmrPBMFaVQMSN0OFySozJio5BHxTuTeug00AVXVAjfDSfk+lUg=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.2.45.tgz"

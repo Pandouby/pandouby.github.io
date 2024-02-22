@@ -20,7 +20,6 @@ import { Progressbar } from "./layout/Progressbar/Progressbar";
 import ProjectSection from "./layout/ProjectSection/ProjectSection";
 import TimeLine from "./layout/Timeline/TimeLine";
 import { ContactSection } from "./layout/Contact-Section/ContactSection";
-import { LanguageSection } from "./layout/LanguageSection/LanguageSection";
 
 const App: FC = () => {
 	const isBrowserDefaultDark = () =>

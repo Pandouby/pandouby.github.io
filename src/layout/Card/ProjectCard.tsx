@@ -3,7 +3,7 @@ import "./styles.scss";
 import Card from "./Card";
 import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
-import Button from "../Button/button";
+import Button from "../Button/Button";
 import Skeleton from "@mui/material/Skeleton";
 import configData from "../../config/configData.json";
 import { SiGithub } from "react-icons/si";

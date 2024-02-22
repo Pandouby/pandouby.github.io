@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./styles.scss";
 import { FormControl, TextField } from "@mui/material";
-import Button from "../Button/button";
+import Button from "../Button/Button";
 import { SocialStack } from "./Socials/SocialStack";
 import { LocationMap } from "./Location/Location-Map";
 
