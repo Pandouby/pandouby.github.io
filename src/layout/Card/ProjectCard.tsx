@@ -23,20 +23,14 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [projectData, setProjectData] = useState(0);
-  const token = configData.authToken;
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
 
     if (!isOpen && !projectData) {
       axios
         .get(
           `https://api.github.com/repos/pandouby/${project.url}/languages`,
-          config
         )
         .then((res) => {
           setProjectData(res.data);

@@ -4,8 +4,13 @@ import configData from "../../config/configData.json";
 import ProjectCard from "../Card/ProjectCard";
 import "./styles.scss";
 
+interface projectProps {
+    title: string;
+    url: string;
+}
+
 const ProjectSection: FC = () => {
-	const projects = configData.projects;
+	const projects: projectProps[] = configData.projects;
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
