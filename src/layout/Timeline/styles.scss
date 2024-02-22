@@ -1,36 +1,37 @@
-@import '/src/styles/theme-variables.scss';
+@import "/src/styles/theme-variables.scss";
 
 .timeline-element {
-    @include themify($themes) {
-        color: themed('textColor');
-    }
+	@include themify($themes) {
+		color: themed("textColor");
+	}
 }
 
 .timeline-element h3 a {
-    @include themify($themes) {
-        color: themed('linkColor');
-    }
+	@include themify($themes) {
+		color: themed("linkColor");
+	}
 }
 
 .vertical-timeline-element-icon {
-    @include themify($themes) {
-        box-shadow: 0 0 0 4px themed('primaryColor'), inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
-    }
+	@include themify($themes) {
+		box-shadow: 0 0 0 4px themed("primaryColor"),
+			inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	}
 }
 
 .vertical-timeline-element-content {
-    @include themify($themes) {
-        background-color: themed('primaryColor');
-        box-shadow: 0 3px 0 themed('boxShadowColor');
-    }
+	@include themify($themes) {
+		background-color: themed("primaryColor");
+		box-shadow: 0 3px 0 themed("boxShadowColor");
+	}
 }
 
 .vertical-timeline-element-content-arrow {
-    @include themify($themes) {
-        border-right: 7px solid themed('primaryColor');
-    }
+	@include themify($themes) {
+		border-right: 7px solid themed("primaryColor");
+	}
 }
 
 .vertical-timeline::before {
-    border-radius: 2px;
+	border-radius: 2px;
 }

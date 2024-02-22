@@ -1,28 +1,19 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import { FC, useState } from "react";
-import { FaJava } from "react-icons/fa";
-import {
-	SiDocker,
-	SiGit,
-	SiJira,
-	SiReact,
-	SiSpring,
-	SiTypescript,
-} from "react-icons/si";
 import "./App.scss";
-import { ThemeContext } from "./contexts/theme-context";
-import ThemeButton from "./layout/Button/ThemeButton";
-import Card from "./layout/Card/Card";
-import Header from "./layout/Header/Header";
-import LevelBar from "./layout/LevelBar/LevelBar";
-import MainContainer from "./layout/MainContainer";
-import { Progressbar } from "./layout/Progressbar/Progressbar";
-import ProjectSection from "./layout/ProjectSection/ProjectSection";
-import TimeLine from "./layout/Timeline/TimeLine";
-import { SocialSection } from "./layout/SocialSection/SocialSection";
 import { configData } from "./config/config";
+import { ThemeContext } from "./contexts/theme-context";
+import { ThemeButton } from "./layout/Button/ThemeButton";
+import { Card } from "./layout/Card/Card";
+import { Header } from "./layout/Header/Header";
+import { LevelBar } from "./layout/LevelBar/LevelBar";
+import { MainContainer } from "./layout/MainContainer";
+import { Progressbar } from "./layout/Progressbar/Progressbar";
+import { ProjectSection } from "./layout/ProjectSection/ProjectSection";
+import { SocialSection } from "./layout/SocialSection/SocialSection";
+import TimeLine from "./layout/Timeline/TimeLine";
 
-const App: FC = () => {
+export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
 		window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -85,5 +76,3 @@ const App: FC = () => {
 		</ThemeContext.Provider>
 	);
 };
-
-export default App;

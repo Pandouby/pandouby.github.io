@@ -1,32 +1,32 @@
-@import '../styles/theme-variables.scss';
+@import "../styles/theme-variables.scss";
 
 .main-container {
-  @include themify($themes) {
-    background: themed('backgroundColor');
-  }
-  width: 100%;
+	@include themify($themes) {
+		background: themed("backgroundColor");
+	}
+	width: 100%;
 }
 
 .footer {
-  width: 100%;
-  z-index: 99;
-  height: 78px;
-  display: flex;
-  font-weight: 600;
-  @include themify($themes) {
-    background: themed('primaryColor');
-    color: themed('textColor');
-  }
-  .footer-content {
-    text-align: center;
-    max-width: 1200px;
-    margin: auto;
-  }
+	width: 100%;
+	z-index: 99;
+	height: 78px;
+	display: flex;
+	font-weight: 600;
+	@include themify($themes) {
+		background: themed("primaryColor");
+		color: themed("textColor");
+	}
+	.footer-content {
+		text-align: center;
+		max-width: 1200px;
+		margin: auto;
+	}
 
-  span {
-    @include themify($themes) {
-      color: themed('secondaryTextColor');
-    }
-    font-size: small;
-  }
+	span {
+		@include themify($themes) {
+			color: themed("secondaryTextColor");
+		}
+		font-size: small;
+	}
 }

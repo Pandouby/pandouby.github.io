@@ -1,15 +1,15 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FC, useRef } from "react";
-import ProjectCard from "../Card/ProjectCard";
+import { ProjectCard } from "../Card/ProjectCard";
 import "./styles.scss";
 import { Project, configData } from "../../config/config";
 
 interface projectProps {
-    title: string;
-    url: string;
+	title: string;
+	url: string;
 }
 
-const ProjectSection: FC = () => {
+export const ProjectSection: FC = () => {
 	const projects: Project[] = configData.projects;
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
@@ -22,7 +22,7 @@ const ProjectSection: FC = () => {
 
 	return (
 		<motion.div className="section project-section">
-			<motion.div className="project-title-wrapper" >
+			<motion.div className="project-title-wrapper">
 				<motion.div
 					className="project-title"
 					ref={ref}
@@ -51,5 +51,3 @@ const ProjectSection: FC = () => {
 		</motion.div>
 	);
 };
-
-export default ProjectSection;

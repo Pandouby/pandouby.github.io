@@ -1,41 +1,33 @@
-import { FC, useEffect, useState } from 'react';
-import './styles.scss';
-import axios from 'axios';
-import { common } from '@mui/material/colors';
+import { FC, useEffect, useState } from "react";
+import "./styles.scss";
+import axios from "axios";
 
-interface Commit {
-  commit: {
-    committer: {
-      date: Date
-    };
-  };
-}
+export const Footer: FC = () => {
+	const [dateOfLastCommit, setDateOfLastCommit] = useState<Date>();
 
-const Footer: FC = () => {
-  const [dateOfLastCommit, setDateOfLastCommit] = useState<Date>();
+	const formateDate = (date: Date | undefined) => {
+		return date ? date.toLocaleDateString("en-GB") : null;
+	};
 
-  useEffect(() => {
-    axios
-    .get(
-      `https://api.github.com/repos/pandouby/pandouby.github.io/commits`,
-    )
-    .then((res) => {
-      setDateOfLastCommit(new Date(res.data[0].commit.committer.date));
-    });
-  }, [])
+	useEffect(() => {
+		axios
+			.get(
+				`https://api.github.com/repos/pandouby/pandouby.github.io/commits`
+			)
+			.then((res) => {
+				setDateOfLastCommit(
+					new Date(res.data[0].commit.committer.date)
+				);
+			});
+	}, []);
 
-  console.log(dateOfLastCommit);
-  
-
-  return (
-    <footer className="footer">
-      <div className="footer-content">
-        &copy; {new Date().getFullYear()} | All rights reserved
-        <br />
-        <span>Updated {dateOfLastCommit?.getDate()}</span>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className="footer">
+			<div className="footer-content">
+				&copy; {new Date().getFullYear()} | All rights reserved
+				<br />
+				<span>Updated {formateDate(dateOfLastCommit)}</span>
+			</div>
+		</footer>
+	);
 };
-
-export default Footer;

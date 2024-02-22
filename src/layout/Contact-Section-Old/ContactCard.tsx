@@ -1,9 +1,8 @@
 import { FC } from "react";
 import "./styles.scss";
 import { FormControl, TextField } from "@mui/material";
-import Button from "../Button/Button";
+import { Button } from "../Button/Button";
 import { SocialStack } from "./Socials/SocialStack";
-import { LocationMap } from "./Location/Location-Map";
 
 export const ContactCard: FC = () => {
 	return (
@@ -74,7 +73,7 @@ export const ContactCard: FC = () => {
 			<div className="socials-container">
 				<h2>Contact Info</h2>
 				<SocialStack />
-                {/* Unhappy with looks maybe use mapboxgl -> is payed service looks mutch better */}
+				{/* Unhappy with looks maybe use mapboxgl -> is payed service looks mutch better */}
 				{/* <LocationMap /> */}
 			</div>
 		</div>

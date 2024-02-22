@@ -8,9 +8,9 @@ interface SocialProps {
 	color?: string;
 }
 
-export const Social: FC<SocialProps> = ({ name, children, url, color}) => {
+export const Social: FC<SocialProps> = ({ name, children, url, color }) => {
 	return (
-		<a href={url} className="social" id={name} style={{color}}>
+		<a href={url} className="social" id={name} style={{ color }}>
 			{children}
 		</a>
 	);
