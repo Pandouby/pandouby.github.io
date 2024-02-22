@@ -84,3 +84,9 @@ footer .button-github {
 	width: 20%;
 	margin: 0.2rem;
 }
+
+@media only screen and (max-width: 768px) { 
+    .card-wrapper {
+        width: 100%;
+    }
+}
