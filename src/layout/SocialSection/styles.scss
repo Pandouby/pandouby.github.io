@@ -3,7 +3,7 @@
 .social {
 	@include themify($themes) {
 		background-color: themed("primaryColor");
-		color: themed("backgroundColor");
+		color: themed("socialIconColor");
 	}
 	display: flex;
 	justify-content: center;

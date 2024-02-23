@@ -14,7 +14,10 @@ export const LevelBar: FC<LevelBarProps> = ({ title, percentage }) => {
 		offset: ["start end", "start center"],
 	});
 
-	const scaleX = useSpring(scrollYProgress);
+	const scaleX = useSpring(scrollYProgress, {
+		stiffness: 200,
+		damping: 30,
+	});
 	const width = useTransform(scaleX, [0, 0.4], [0, 1 * percentage]);
 	const widthPercent = useTransform(width, (w) => `${w}%`);
 
@@ -25,6 +28,9 @@ export const LevelBar: FC<LevelBarProps> = ({ title, percentage }) => {
 				<motion.div
 					className="level-bar infill"
 					style={{ width: widthPercent }}
+					transition={{
+						stiffness: 10,
+					}}
 				></motion.div>
 				<div className="level-bar background"></div>
 				<span>{percentage}%</span>

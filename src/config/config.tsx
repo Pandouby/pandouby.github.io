@@ -32,7 +32,6 @@ interface ConfigData {
 	skills: Skill[];
 	projects: Project[];
 	socials: SocialType[];
-
 }
 
 export const configData: ConfigData = {
@@ -57,6 +56,22 @@ export const configData: ConfigData = {
 	],
 	socials: [
 		{
+			name: "Mail",
+			icon: <HiMail />,
+			onClick: () => {
+				navigator.clipboard
+					.writeText("silvan@ggaweb.ch")
+					.then(() => {
+						alert(`Copied!`);
+					})
+					.catch((error) => {
+						alert(`Copy failed! ${error}`);
+					});
+				window.location.href =
+					"mailto:silvan@ggaweb.ch?subject=Contact";
+			},
+		},
+		{
 			name: "LinkedIn",
 			icon: <FaLinkedin />,
 			url: "https://www.linkedin.com/in/silvan-dubach-9247aa267/",
@@ -65,16 +80,6 @@ export const configData: ConfigData = {
 			name: "GitHub",
 			icon: <SiGithub />,
 			url: "https://www.github.com/pandouby",
-		},
-		{
-			name: "Mail",
-			icon: <HiMail />,
-			onClick: () => {
-				window.location.href = "mailto:silvan@ggaweb.ch?subject=Contact";
-  				navigator.clipboard.writeText("silvan@ggaweb.ch");
-  				alert("Email copied to clipboard");
-				console.log("in comp");
-			}
 		},
 	],
 };

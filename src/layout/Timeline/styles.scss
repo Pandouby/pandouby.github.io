@@ -1,5 +1,9 @@
 @import "/src/styles/theme-variables.scss";
 
+.vertical-timeline {
+    z-index: 80;
+}
+
 .timeline-element {
 	@include themify($themes) {
 		color: themed("textColor");

@@ -2,7 +2,7 @@ $themes: (
 	light: (
 		primaryColor: #f9fcff,
 		primaryShade: #dfe4ea,
-		secondaryColor: rgba(33, 150, 243),
+		secondaryColor: #2196f3,
 		backgroundColor: #e7ecf4,
 		boxShadowColor: rgba(118, 118, 118, 0.419),
 		textColor: #191717,
@@ -10,6 +10,7 @@ $themes: (
 		percentageColor: rgb(65, 65, 65),
 		projectTitleColor: #fff,
 		linkColor: #215ab7,
+        socialIconColor: #dfe4ea,
 	),
 	dark: (
 		primaryColor: #242728,
@@ -22,6 +23,7 @@ $themes: (
 		percentageColor: #464c56,
 		projectTitleColor: #fff,
 		linkColor: #215ab7,
+        socialIconColor: #31353c,
 	),
 );
 

@@ -5,7 +5,7 @@
 	@include themify($themes) {
 		background-color: themed("secondaryColor");
 	}
-	z-index: 100;
+	z-index: 70;
 	position: fixed;
 	transform-origin: top left;
 	top: 0;
