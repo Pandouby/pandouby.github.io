@@ -1,18 +1,16 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./App.scss";
-import { configData } from "./config/config";
 import { ThemeContext } from "./contexts/theme-context";
 import { ThemeButton } from "./layout/Button/ThemeButton";
-import { Card } from "./layout/Card/Card";
 import { Header } from "./layout/Header/Header";
-import { LevelBar } from "./layout/LevelBar/LevelBar";
+import { LoadingScreen } from "./layout/LoadingScreen/LoadingScreen";
 import { MainContainer } from "./layout/MainContainer";
 import { Progressbar } from "./layout/Progressbar/Progressbar";
 import { ProjectSection } from "./layout/ProjectSection/ProjectSection";
 import { SocialSection } from "./layout/SocialSection/SocialSection";
 import TimeLine from "./layout/Timeline/TimeLine";
-import { LoadingScreen } from "./layout/LoadingScreen/LoadingScreen";
+import { SkillSection } from "./layout/SkillSection/SkillSection";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -28,8 +26,6 @@ export const App: FC = () => {
 	ChartJS.register(ArcElement, Tooltip, Legend);
 
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
-
-	const skills = configData.skills;
 
 	useEffect(() => {
 		setTimeout(() => setShowLoadingScreen(false), 3000);
@@ -54,29 +50,7 @@ export const App: FC = () => {
 								<Header />
 							</div>
 
-							<div className="section skill-section">
-								<div className="skill-text">
-									<h2>My Skills</h2>
-									<p>
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Commodi quisquam
-										deleniti facere voluptatem cupiditate,
-										hic perferendis, illo excepturi sunt nam
-										ipsa quibusdam ipsum, ea pariatur?
-										Excepturi sequi laborum vitae non.
-									</p>
-								</div>
-								<div className="skill-card">
-									<Card title="Skills">
-										{skills.map((skill) => (
-											<LevelBar
-												title={skill.skill}
-												percentage={skill.level}
-											></LevelBar>
-										))}
-									</Card>
-								</div>
-							</div>
+							<SkillSection />
 
 							<TimeLine />
 
