@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Card } from "../Card/Card";
-import { configData } from "../../config/config";
+import { Skill, configData } from "../../config/config";
 import { LevelBar } from "../LevelBar/LevelBar";
 import "./styles.scss";
 
 export const SkillSection: FC = () => {
-    const skills = configData.skills;
+    const skills: Skill[] = configData.skills;
 
 	return (
 		<div className="section skill-section">
@@ -22,8 +22,9 @@ export const SkillSection: FC = () => {
 				<Card title="Skills">
 					{skills.map((skill) => (
 						<LevelBar
-							title={skill.skill}
-							percentage={skill.level}
+							name={skill.name}
+							icon={skill.icon}
+							percentage={skill.percentage}
 						></LevelBar>
 					))}
 				</Card>

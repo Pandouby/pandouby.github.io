@@ -25,6 +25,10 @@
 	border-radius: 0.5rem;
 }
 
+.tooltip {
+	z-index: 70;
+}
+
 .level-bar.background {
 	z-index: 49;
 	@include themify($themes) {
@@ -44,7 +48,7 @@
 		color: themed("percentageColor");
 	}
 	mix-blend-mode: difference;
-	z-index: 100;
+	z-index: 50;
 	// Messes up alignment with levelbar percentage
 	//font-family: Suisseintl, sans-serif;
 	font-weight: 700;
@@ -57,14 +61,21 @@
 	}
 }
 
-.level-bar-container .icon-container {
+.level-bar-container {
+	.icon-container {
 	@include themify($themes) {
 		background-color: themed("secondaryColor");
 	}
+	z-index: 60;
 	border-radius: 50%;
 	padding: 0.2rem;
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	z-index: 100;
+	border: none;
+	}
+
+	.icon-container:focus {
+		outline-width: 0;
+	}
 }

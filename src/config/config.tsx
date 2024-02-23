@@ -12,8 +12,9 @@ import { HiMail } from "react-icons/hi";
 import { ReactElement } from "react";
 
 export interface Skill {
-	skill: ReactElement;
-	level: number;
+	name: string;
+	icon: ReactElement;
+	percentage: number;
 }
 
 export interface Project {
@@ -36,13 +37,13 @@ interface ConfigData {
 
 export const configData: ConfigData = {
 	skills: [
-		{ skill: <SiReact className="icon-container" />, level: 70 },
-		{ skill: <SiTypescript className="icon-container" />, level: 75 },
-		{ skill: <FaJava className="icon-container" />, level: 70 },
-		{ skill: <SiSpring className="icon-container" />, level: 50 },
-		{ skill: <SiGit className="icon-container" />, level: 80 },
-		{ skill: <SiDocker className="icon-container" />, level: 50 },
-		{ skill: <SiJira className="icon-container" />, level: 70 },
+		{name: "React", icon: <SiReact className="icon-container" id="React" />, percentage: 70 },
+		{name: "TypeScript", icon: <SiTypescript className="icon-container" id="TypeScript" />, percentage: 75 },
+		{name: "Java", icon: <FaJava className="icon-container" id="Java" />, percentage: 70 },
+		{name: "Spring", icon: <SiSpring className="icon-container" id="Spring" />, percentage: 50 },
+		{name: "Git", icon: <SiGit className="icon-container" id="Git" />, percentage: 80 },
+		{name: "Docker", icon: <SiDocker className="icon-container" id="Docker" />, percentage: 50 },
+		{name: "Jira", icon: <SiJira className="icon-container" id="Jira" />, percentage: 70 },
 	],
 	projects: [
 		{
