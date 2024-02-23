@@ -6,3 +6,10 @@
 	align-items: center;
 	height: 100vh;
 }
+
+.main-container {
+	@include themify($themes) {
+		background: themed("backgroundColor");
+	}
+	width: 100%;
+}

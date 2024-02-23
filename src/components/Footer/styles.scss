@@ -1,11 +1,4 @@
-@import "../styles/theme-variables.scss";
-
-.main-container {
-	@include themify($themes) {
-		background: themed("backgroundColor");
-	}
-	width: 100%;
-}
+@import "/src/styles/theme-variables.scss";
 
 .footer {
 	width: 100%;

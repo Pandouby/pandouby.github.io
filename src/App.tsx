@@ -2,15 +2,15 @@ import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import { FC, useEffect, useState } from "react";
 import "./App.scss";
 import { ThemeContext } from "./contexts/theme-context";
-import { ThemeButton } from "./layout/Button/ThemeButton";
-import { Header } from "./layout/Header/Header";
-import { LoadingScreen } from "./layout/LoadingScreen/LoadingScreen";
-import { MainContainer } from "./layout/MainContainer";
-import { Progressbar } from "./layout/Progressbar/Progressbar";
-import { ProjectSection } from "./layout/ProjectSection/ProjectSection";
-import { SocialSection } from "./layout/SocialSection/SocialSection";
-import TimeLine from "./layout/Timeline/TimeLine";
-import { SkillSection } from "./layout/SkillSection/SkillSection";
+import { ThemeButton } from "./components/Button/ThemeButton";
+import { Header } from "./components/Header/Header";
+import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
+import { Progressbar } from "./components/Progressbar/Progressbar";
+import { ProjectSection } from "./components/ProjectSection/ProjectSection";
+import { SocialSection } from "./components/SocialSection/SocialSection";
+import TimeLine from "./components/Timeline/TimeLine";
+import { SkillSection } from "./components/SkillSection/SkillSection";
+import { Footer } from "./components/Footer/Footer";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -43,7 +43,7 @@ export const App: FC = () => {
 				) : (
 					<>
 						<Progressbar />
-						<MainContainer>
+						<div className="main-container">
 							<ThemeButton />
 
 							<div className="section header-section">
@@ -57,7 +57,9 @@ export const App: FC = () => {
 							<ProjectSection />
 
 							<SocialSection />
-						</MainContainer>
+
+							<Footer />
+						</div>
 					</>
 				)}
 			</div>
