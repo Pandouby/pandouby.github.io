@@ -11,7 +11,8 @@ import { BsClipboardData } from "react-icons/bs";
 const TimeLine: FC = () => {
 	return (
 		<VerticalTimeline lineColor={"rgb(33, 150, 243)"}>
-			<VerticalTimelineElement
+			
+			{/*<VerticalTimelineElement
 				className="timeline-element"
 				contentStyle={{ background: "rgb(33, 150, 243)" }}
 				contentArrowStyle={{
@@ -45,14 +46,32 @@ const TimeLine: FC = () => {
 				</h4>
 				<p>Frontend Development</p>
 			</VerticalTimelineElement>
+			*/}
+			
 			<VerticalTimelineElement
 				className="timeline-element"
-				date="2020 - 2024"
+				date="2020 - 2022"
 				iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
 				icon={<SiReact />}
 			>
 				<h3 className="vertical-timeline-element-title">
-					Apprentice, Software Developer{" "}
+					Apprentice, Backend Developer{" "}
+					<a href="https://www.linkedin.com/company/ti8m">@ti&m</a>
+				</h3>
+				<h4 className="vertical-timeline-element-subtitle">
+					Zürich, Switzerland
+				</h4>
+				<p></p>
+			</VerticalTimelineElement>
+
+			<VerticalTimelineElement
+				className="timeline-element"
+				date="2022 - 2024"
+				iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+				icon={<SiReact />}
+			>
+				<h3 className="vertical-timeline-element-title">
+					Apprentice, Frontend Developer{" "}
 					<a href="https://www.linkedin.com/company/ti8m">@ti&m</a>
 				</h3>
 				<h4 className="vertical-timeline-element-subtitle">
