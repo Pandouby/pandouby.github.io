@@ -60,12 +60,16 @@
 }
 
 .card-wrapper[data-isopen="true"] {
-	height: 630px;
+	height: 800px;
 	z-index: 100;
 }
 
 .projectCard {
 	margin: 3rem 0 3rem 0;
+
+	.card-wrapper {
+		height: 300px;
+	}
 }
 
 .card footer {
@@ -85,8 +89,8 @@ footer .button-github {
 	margin: 0.2rem;
 }
 
-@media only screen and (max-width: 768px) { 
-    .card-wrapper {
-        width: 100%;
-    }
+@media only screen and (max-width: 768px) {
+	.card-wrapper {
+		width: 100%;
+	}
 }

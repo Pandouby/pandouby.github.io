@@ -12,10 +12,7 @@ export const SkillSection: FC = () => {
 			<div className="skill-text">
 				<h2>My Skills</h2>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Commodi quisquam deleniti facere voluptatem cupiditate, hic
-					perferendis, illo excepturi sunt nam ipsa quibusdam ipsum,
-					ea pariatur? Excepturi sequi laborum vitae non.
+					Trough my Software Develope apprenticeship anwell as the years that i have spent programming in my free time, i learned lots of Programming languages and tools. The most important ones are listed here.
 				</p>
 			</div>
 			<div className="skill-card">

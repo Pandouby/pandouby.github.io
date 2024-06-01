@@ -36,14 +36,9 @@ export const ProjectSection: FC = () => {
 				{projects.map((project) => {
 					return (
 						<ProjectCard project={project}>
-							<p>
-								Lorem ipsum dolor sit, amet consectetur
-								adipisicing elit. Laborum magnam soluta
-								assumenda nostrum, a, ab recusandae ipsum
-								voluptatibus quas nesciunt sapiente eligendi
-								voluptates accusamus itaque quam neque? Ducimus,
-								voluptate assumenda.
-							</p>
+							<>
+								<p>{project.description}</p>
+							</>
 						</ProjectCard>
 					);
 				})}
