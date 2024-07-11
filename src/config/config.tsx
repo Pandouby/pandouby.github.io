@@ -81,8 +81,8 @@ export const configData: ConfigData = {
 			description: "My Portfolio Website to display my Skills and Projects"
 		},
 		{
-			title: "VisitedApp",
-			url: "pandouby/VisitedApp",
+			title: "Visited",
+			url: "pandouby/Visited",
 			description: "A React Native based application whitch allows you to select your visited countries on a 3D renderd globe."
 		},
 		{
