@@ -8,6 +8,7 @@ import Skeleton from "@mui/material/Skeleton";
 import { SiGithub } from "react-icons/si";
 import { LinkButton } from "../Button/LinkButton";
 import { Project } from "../../config/config";
+import { IoLogOutOutline } from "react-icons/io5";
 
 interface ProjectCardProps {
 	project: Project;
@@ -133,9 +134,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
 				</Button>
 				<LinkButton
 					className="button-github"
-					url={`https://github.com/${project.url}`}
+					url={`http://songkeychain.dodger.ch:5173/`}
 				>
-					<SiGithub />
+					{project.hasGithub ? <SiGithub /> : <IoLogOutOutline />}
 				</LinkButton>
 			</footer>
 		</Card>

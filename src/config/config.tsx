@@ -21,6 +21,7 @@ export interface Project {
 	title: string;
 	url: string;
 	description?: string;
+	hasGithub: boolean;
 }
 
 export interface SocialType {
@@ -78,22 +79,26 @@ export const configData: ConfigData = {
 		{
 			title: "Portfolio Website",
 			url: "pandouby/pandouby.github.io",
-			description: "My Portfolio Website to display my Skills and Projects"
+			description: "My Portfolio Website to display my Skills and Projects",
+			hasGithub: true,
 		},
 		{
 			title: "Visited",
 			url: "pandouby/Visited",
-			description: "A React Native based application whitch allows you to select your visited countries on a 3D renderd globe."
+			description: "A React Native based application whitch allows you to select your visited countries on a 3D renderd globe",
+			hasGithub: true,
 		},
 		{
 			title: "Flow-Fields",
 			url: "Pandouby/flow-field",
-			description: "A small project to get into perlin noise based flow-field simulations"
+			description: "A small project to get into perlin noise based flow-field simulations",
+			hasGithub: true,
 		},
 		{
 			title: "Spotify Keychain",
 			url: "rtful/SpotifyKeychainFrontend",
-			description: "A Project with a friend that allows you to geretate a spotify-code-keychain by only entering a song name or link"
+			description: "A Project with a friend that allows you to geretate a spotify-code-keychain by only entering a song name or link",
+			hasGithub: false,
 		},
 	],
 	socials: [

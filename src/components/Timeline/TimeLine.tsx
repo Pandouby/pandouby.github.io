@@ -49,13 +49,12 @@ const TimeLine: FC = () => {
 
 			<VerticalTimelineElement
 				className="timeline-element"
-				date="2022 - 2024"
+				date="2024 - present"
 				iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
 				icon={<SiReact />}
 			>
 				<h3 className="vertical-timeline-element-title">
-					Apprentice, Frontend Developer{" "}
-					<a href="https://www.linkedin.com/company/ti8m">@ti&m</a>
+					Open for work, looking for my next challange!
 				</h3>
 				<h4 className="vertical-timeline-element-subtitle">
 					Zürich, Switzerland
@@ -65,12 +64,12 @@ const TimeLine: FC = () => {
 
 			<VerticalTimelineElement
 				className="timeline-element"
-				date="2020 - 2022"
+				date="2020 - 2024"
 				iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
 				icon={<SiReact />}
 			>
 				<h3 className="vertical-timeline-element-title">
-					Apprentice, Backend Developer{" "}
+					Apprentice, Software Developer{" "}
 					<a href="https://www.linkedin.com/company/ti8m">@ti&m</a>
 				</h3>
 				<h4 className="vertical-timeline-element-subtitle">
