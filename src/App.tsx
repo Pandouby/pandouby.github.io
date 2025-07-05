@@ -11,6 +11,7 @@ import { SocialSection } from "./components/SocialSection/SocialSection";
 import TimeLine from "./components/Timeline/TimeLine";
 import { SkillSection } from "./components/SkillSection/SkillSection";
 import { Footer } from "./components/Footer/Footer";
+import { Titlecard } from "./components/Header/Titlecard";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -37,6 +38,10 @@ export const App: FC = () => {
 				rel="stylesheet"
 				href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 			/>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+			/>
 			<div className={`theme-${theme}`}>
 				{showLoadingScreen ? (
 					<LoadingScreen />
@@ -47,7 +52,7 @@ export const App: FC = () => {
 							<ThemeButton />
 
 							<div className="section header-section">
-								<Header />
+								<Titlecard />
 							</div>
 
 							<SkillSection />
