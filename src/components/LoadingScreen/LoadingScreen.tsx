@@ -19,8 +19,8 @@ export const LoadingScreen: FC = () => {
 				initial={{ opacity: 1, filter: "blur(0px)" }}
 				animate={{ opacity: 0, y: -50, filter: "blur(5px)" }}
 				transition={{
-					delay: 2.5,
-					duration: 0.3,
+					delay: 2,
+					duration: 0,
 					ease: "easeInOut",
 				}}
 			>
@@ -28,7 +28,7 @@ export const LoadingScreen: FC = () => {
 					initial={{ pathLength: 0 }}
 					animate={{ pathLength: 1 }}
 					transition={{
-						duration: 1.5,
+						duration: 1,
 						ease: "easeInOut",
 					}}
 					fill="none"
@@ -44,8 +44,8 @@ export const LoadingScreen: FC = () => {
 				initial={{ opacity: 1, filter: "blur(0px)" }}
 				animate={{ opacity: 0, y: -50, filter: "blur(5px)" }}
 				transition={{
-					delay: 2.5,
-					duration: 0.3,
+					delay: 2,
+					duration: 0,
 					ease: "easeInOut",
 				}}
 			>
@@ -53,9 +53,9 @@ export const LoadingScreen: FC = () => {
 					initial={{ pathLength: 0 }}
 					animate={{ pathLength: 1 }}
 					transition={{
-						delay: 1.5,
+						delay: 1,
 						duration: 1,
-						ease: "easeInOut",
+						ease: "easeIn",
 					}}
 					fill="none"
 					strokeWidth="2"

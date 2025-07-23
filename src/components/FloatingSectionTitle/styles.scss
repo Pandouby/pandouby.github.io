@@ -1,0 +1,45 @@
+@import "/src/styles/theme-variables.scss";
+
+.floating-title-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: sticky;
+	top: 0px;
+	pointer-events: none;
+	height: 100vh;
+	width: 100vw;
+	@include themify($themes) {
+		color: themed("textColor");
+		text-shadow: 5px 5px 5px themed("boxShadowColor");
+	}
+}
+
+.reverse-effect {
+	position: sticky;
+	text-decoration: none;
+	color: white !important;
+	//For color reverse effect
+	z-index: 60;
+	background-color: transparent;
+	mix-blend-mode: difference;
+}
+
+.floating-title {
+	/*
+	@include themify($themes) {
+		color: themed("textColor");
+		text-shadow: 5px 5px 5px themed("boxShadowColor");
+	}
+        */
+	position: static;
+	font-family: Suisseintl, sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 19.5vw;
+	line-height: 10.6vw;
+	letter-spacing: -0.8vw;
+	user-select: none;
+}

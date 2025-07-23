@@ -5,7 +5,9 @@
 	height: 60%;
 	max-width: 400px;
 	max-height: 450px;
-	background-color: #1131ce;
+		@include themify($themes) {
+		background-color: themed("titleCardBackgroundColor");
+	}
 	flex-direction: column;
 	border-radius: 5px;
 	font-family: Suisseintl, sans-serif;
@@ -26,7 +28,9 @@
 	font-style: normal;
 	display: flex;
 	flex-direction: row;
-	color: #2241e0;
+	@include themify($themes) {
+		color: themed("titleCardTextColor");
+	}
 	font-size: 75px;
 	line-height: 1;
 	letter-spacing: 8px;
@@ -44,27 +48,30 @@
 
 .title-card-paragraph:nth-child(1) {
 	left: -500px;
-} 
-
+}
 
 .title-card-paragraph:nth-child(2) {
 	left: -550px;
-} 
+}
 
 .title-card-paragraph:nth-child(3) {
 	left: -600px;
-} 
+}
 
 .title-card-paragraph:nth-child(4) {
 	left: -650px;
-} 
+}
 
 .title-card-paragraph:nth-child(5) {
 	left: -700px;
-} 
+}
 
 .title-card-footer {
-	background-color: white;
+	@include themify($themes) {
+		color: themed("textColor");
+		background-color: themed("titleCardFooterColor");
+	}
+	
 	height: 15%;
 	width: 100%;
 	border-bottom-left-radius: 5px;

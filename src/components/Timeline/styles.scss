@@ -1,7 +1,18 @@
 @import "/src/styles/theme-variables.scss";
 
+.timeline-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5rem;
+	box-sizing: border-box;
+	width: 100%;
+}
+
 .vertical-timeline {
-    z-index: 80;
+	z-index: 80;
+	width: 70% !important;
 }
 
 .timeline-element {
@@ -38,4 +49,17 @@
 
 .vertical-timeline::before {
 	border-radius: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+	.timeline-wrapper {
+		padding: 3rem;
+		width: 100%;
+	}
+
+	.vertical-timeline {
+	z-index: 80;
+	width: 100% !important;
+	box-sizing: border-box;
+}
 }

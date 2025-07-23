@@ -14,22 +14,7 @@
 	//mix-blend-mode: difference;
 }
 
-.project-title-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: sticky;
-	top: 0px;
-	pointer-events: none;
-	height: 100vh;
-}
-
 .project-section .project-title {
-	@include themify($themes) {
-		color: themed("textColor");
-		text-shadow: 5px 5px 5px themed("boxShadowColor");
-	}
 	position: static;
 	font-family: Suisseintl, sans-serif;
 	font-weight: 600;

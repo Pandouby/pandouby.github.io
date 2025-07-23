@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FC, useRef } from "react";
 import "./styles.scss";
 
@@ -8,8 +8,13 @@ export const Titlecard: FC = () => {
 		target: ref,
 		offset: ["center center", "end start"],
 	});
+    const scaleY = useSpring(scrollYProgress, {
+		stiffness: 150,
+		damping: 15,
+		restDelta: 0.5,
+	});
 
-    const translatePos = useTransform(scrollYProgress, [0, 1], [0, 200]);
+    const translatePos = useTransform(scaleY, [0, 1], [0, 200]);
 	const translateXPos = (multiplier: number) => useTransform(
 		translatePos,
 		(x) => `translateX(${x * multiplier}px)`
@@ -58,7 +63,7 @@ export const Titlecard: FC = () => {
 					<div>CH</div>
 				</motion.div>
 
-				<motion.div className="title-card-paragraph" style={{ transform: translateXPos(1.4) }}>
+				<motion.div className="title-card-paragraph" style={{ transform: translateXPos(1.5) }}>
 					<div>SIL</div>
 					<div>VAN</div>
 					<div className="highlight">DU</div>
@@ -75,30 +80,30 @@ export const Titlecard: FC = () => {
 					<div>VAN</div>
 					<div className="highlight">DU</div>
 					<div>BA</div>
-					<div>CH</div>
-				</motion.div>
-
-				<motion.div className="title-card-paragraph" style={{ transform: translateXPos(1.6) }}>
-					<div>SIL</div>
-					<div>VAN</div>
-					<div>DU</div>
-					<div className="highlight">BA</div>
-					<div>CH</div>
-
-					<div>SIL</div>
-					<div>VAN</div>
-					<div>DU</div>
-					<div className="highlight">BA</div>
-					<div>CH</div>
-
-					<div>SIL</div>
-					<div>VAN</div>
-					<div>DU</div>
-					<div className="highlight">BA</div>
 					<div>CH</div>
 				</motion.div>
 
 				<motion.div className="title-card-paragraph" style={{ transform: translateXPos(1.8) }}>
+					<div>SIL</div>
+					<div>VAN</div>
+					<div>DU</div>
+					<div className="highlight">BA</div>
+					<div>CH</div>
+
+					<div>SIL</div>
+					<div>VAN</div>
+					<div>DU</div>
+					<div className="highlight">BA</div>
+					<div>CH</div>
+
+					<div>SIL</div>
+					<div>VAN</div>
+					<div>DU</div>
+					<div className="highlight">BA</div>
+					<div>CH</div>
+				</motion.div>
+
+				<motion.div className="title-card-paragraph" style={{ transform: translateXPos(2.1) }}>
 					<div>SIL</div>
 					<div>VAN</div>
 					<div>DU</div>

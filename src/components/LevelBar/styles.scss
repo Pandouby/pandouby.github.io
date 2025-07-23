@@ -63,16 +63,19 @@
 
 .level-bar-container {
 	.icon-container {
-	@include themify($themes) {
-		background-color: themed("secondaryColor");
-	}
-	z-index: 60;
-	border-radius: 50%;
-	padding: 0.2rem;
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	border: none;
+		@include themify($themes) {
+			background-color: themed("secondaryColor");
+		}
+		z-index: 60;
+		border-radius: 50%;
+		padding: 0.2rem;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		border: none;
+		@include themify($themes) {
+			color: themed("skillIconColor");
+		}
 	}
 
 	.icon-container:focus {
