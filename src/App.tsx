@@ -13,6 +13,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Titlecard } from "./components/Header/Titlecard";
 import { GallerySection } from "./components/GallerySection/GallerySection";
 import { TimeLine } from "./components/Timeline/TimeLine";
+import { LanguageSection } from "./components/LanguageSection/LanguageSection";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -58,11 +59,13 @@ export const App: FC = () => {
 
 							<SkillSection />
 
+							<LanguageSection />
+
 							<TimeLine />
 
 							<ProjectSection />
 
-							{/*<GallerySection /> */}
+							<GallerySection /> 
 
 							<SocialSection />
 

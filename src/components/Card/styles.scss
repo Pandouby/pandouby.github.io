@@ -41,6 +41,10 @@
 }
 
 .card-title {
+	font-family: Suisseintl, sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+	font-style: bold;
 	@include themify($themes) {
 		color: themed("textColor");
 	}
@@ -52,21 +56,20 @@
 	@include themify($themes) {
 		color: themed("textColor");
 	}
-	height: 85%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	box-sizing: border-box;
 	padding: 2rem;
 }
 
 .card-wrapper[data-isopen="true"] {
-	height: 800px;
+	height: 700px;
 	z-index: 100;
 }
 
 .projectCard {
-	margin: 3rem 0 3rem 0;
-
 	.card-wrapper {
 		height: 300px;
 	}
@@ -92,9 +95,20 @@ footer .button-github {
 		scale: 150%;
 	}
 }
-
+ 
 @media only screen and (max-width: 768px) {
 	.card-wrapper {
 		width: 100%;
+		min-height: 300px;
+	}
+
+	.card-wrapper .card-back {
+		transform-origin: bottom left;
+		transform: rotate(2deg) translateY(-20px);
+	}
+
+	.card-wrapper[data-isopen="true"] {
+		max-height: 600px;
+		z-index: 100;
 	}
 }

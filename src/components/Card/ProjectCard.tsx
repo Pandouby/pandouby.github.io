@@ -83,7 +83,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
 			},
 		},
 		responsive: true,
-		aspectRatio: 1,
+		aspectRatio: 0.8,
 		layout: {
 			padding: {
 				left: 0,

@@ -1,0 +1,18 @@
+@import "/src/styles/theme-variables.scss";
+
+.language-card {
+	.card-content {
+		align-items: start;
+
+        .card-title {
+            align-self: center;
+            margin-bottom: 1rem;
+        }
+	}
+}
+
+@media only screen and (max-width: 768px) {
+    .language-card {
+        width: 100% !important;
+    }
+}

@@ -8,10 +8,11 @@ export const Titlecard: FC = () => {
 		target: ref,
 		offset: ["center center", "end start"],
 	});
+
     const scaleY = useSpring(scrollYProgress, {
-		stiffness: 150,
-		damping: 15,
-		restDelta: 0.5,
+		stiffness: 200,
+		damping: 50,
+		restDelta: 0.001,
 	});
 
     const translatePos = useTransform(scaleY, [0, 1], [0, 200]);
