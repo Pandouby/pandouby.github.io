@@ -96,7 +96,7 @@ export const configData: ConfigData = {
 		},
 		{
 			title: "Spotify Keychain",
-			url: "rtful/SpotifyKeychainFrontend",
+			url: "http://songkeychain.dodger.ch",
 			description: "A Project with a friend that allows you to geretate a spotify-code-keychain by only entering a song name or link",
 			hasGithub: false,
 		},

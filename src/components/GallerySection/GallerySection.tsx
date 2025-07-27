@@ -11,12 +11,12 @@ import {
 export const GallerySection: FC = () => {
 	const imageList: GalleryImageProps[] = [
 		{
-			src: "/images/Gallery/1.jpeg",
-			alt: "Image 1",
-			orientation: GalleryImageOrientation.PORTRAIT,
-			offset: { offsetX: 63, offsetY: -43 },
-			scrollMultiplier: 2,
-		},
+            src: "/images/Gallery/1.jpeg",
+            alt: "Image 1",
+            orientation: GalleryImageOrientation.PORTRAIT,
+            offset: { offsetX: 63, offsetY: -43 },
+            scrollMultiplier: 2,
+        },
 		{
 			src: "/images/Gallery/2.jpeg",
 			alt: "Image 2",

@@ -134,7 +134,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, children }) => {
 				</Button>
 				<LinkButton
 					className="button-github"
-					url={`http://songkeychain.dodger.ch:5173/`}
+					url={project.hasGithub ? `https://github.com/${project.url}` : project.url}
 				>
 					{project.hasGithub ? <SiGithub /> : <IoLogOutOutline />}
 				</LinkButton>

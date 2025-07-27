@@ -13,7 +13,7 @@ export interface GalleryImageProps {
 	orientation: GalleryImageOrientation;
 	offset: { offsetX: number; offsetY: number };
 	scrollMultiplier?: number;
-    style: React.CSSProperties;
+    style?: React.CSSProperties;
 }
 
 export const GalleryImage: FC<GalleryImageProps> = ({
