@@ -14,6 +14,7 @@ import { Titlecard } from "./components/Header/Titlecard";
 import { GallerySection } from "./components/GallerySection/GallerySection";
 import { TimeLine } from "./components/Timeline/TimeLine";
 import { LanguageSection } from "./components/LanguageSection/LanguageSection";
+import { TestSection } from "./components/TestSection/TestSection";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>
@@ -56,6 +57,8 @@ export const App: FC = () => {
 							<div className="section header-section">
 								<Titlecard />
 							</div>
+
+							${/*<TestSection /> Only For Dev purposes*/}
 
 							<SkillSection />
 
