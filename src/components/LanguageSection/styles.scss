@@ -3,16 +3,81 @@
 .language-card {
 	.card-content {
 		align-items: start;
+		gap: $space-3;
 
-        .card-title {
-            align-self: center;
-            margin-bottom: 1rem;
-        }
+		.language {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			gap: $space-5;
+
+			.language-level {
+				width: 100%;
+				display: flex;
+				flex-direction: rown;
+				align-items: center;
+				gap: $space-3;
+
+				.dot {
+					width: $space-4;
+					height: $space-4;
+					border-radius: $radius-full;
+
+					@include themify($themes) {
+						background-color: themed("levelBarBackgroundColor");
+					}
+				}
+
+				.filled {
+					@include themify($themes) {
+						background-color: themed("secondaryColor");
+					}
+				}
+			}
+		}
+
+		.language-text {
+			width: 20%;
+			display: flex;
+			flex-direction: column;
+
+			h2 {
+				margin: $space-0;
+			}
+
+			p {
+				margin: $space-0;
+			}
+		}
+
+		.card-title {
+			align-self: center;
+			margin-bottom: 1rem;
+		}
 	}
 }
 
 @media only screen and (max-width: 768px) {
-    .language-card {
-        width: 100% !important;
-    }
+	.language-card {
+		width: 100% !important;
+		height: 400px !important;
+		flex-wrap: wrap;
+
+		.card-content {
+			.language {
+				display: flex;
+				flex-direction: column;
+				gap: $space-3;
+
+				.language-level {
+					gap: $space-1;
+
+					.dot {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
 }

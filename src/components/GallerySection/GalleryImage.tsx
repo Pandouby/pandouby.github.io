@@ -37,10 +37,51 @@ export const GalleryImage: FC<GalleryImageProps> = ({
 		offset: ["start end", "end start"],
 	});
 
+	// Offset Position of Gallery Images and add scroll parallex effect
+	const translate = useTransform(scrollYProgress, [0, 1], [0, 100]);
+	const translateY = useTransform(translate, (x) => {
+		return `translate(${offset.offsetX}px, ${
+			offset.offsetY - x * scrollMultiplier
+		}px)`;
+	});
+
+	// Add entry animation for Gallery Images
+	const scale = useTransform(
+		scrollYProgress,
+		[0, 0.3, 0.7, 1],
+		[50, 100, 100, 100]
+	);
+	const scalePercentage = useTransform(scale, (s) => `${s}%`);
+	const opacity = useTransform(
+		scrollYProgress,
+		[0, 0.35, 0.65, 1],
+		[1, 1, 1, 1]
+	);
+	const blurValue = useTransform(
+		scrollYProgress,
+		[0, 0.35, 0.65, 1],
+		[5, 0, 0, 5]
+	);
+	const blur = useTransform(blurValue, (bv) => `blur(${bv}px)`);
+
 	const [isImageViewerOpen, setIsImageViewerOpen] = useState(false);
 
 	const handleImageClick = () => {
-		setIsImageViewerOpen(!isImageViewerOpen);
+		if (!window.matchMedia("(max-width: 768px)").matches) {
+			setIsImageViewerOpen(!isImageViewerOpen);
+		}
+	};
+
+	const transformStyle = !isImageViewerOpen
+		? {
+				transform: translateY,
+		  }
+		: {};
+
+	const motionStyles = {
+		//scale: scalePercentage,
+		opacity,
+		filter: blur,
 	};
 
 	useEffect(() => {
@@ -53,43 +94,39 @@ export const GalleryImage: FC<GalleryImageProps> = ({
 		}
 	}, [isImageViewerOpen]);
 
-	const translate = useTransform(scrollYProgress, [0, 1], [0, 100]);
-	const translateY = useTransform(translate, (x) => {
-		return `translate(${offset.offsetX}px, ${
-			offset.offsetY - x * scrollMultiplier
-		}px)`;
-	});
-
-	const transformStyle = !isImageViewerOpen
-		? {
-				transform: translateY,
-		  }
-		: {};
-
 	return (
 		<>
-			<motion.div className="gallery-image-wrapper" style={{ ...style }} layoutId={`wrapper-${lowResSrc}`}>
+			<motion.div
+				className="gallery-image-wrapper"
+				style={{
+			        ...style,
+                    //...transformStyle,
+					//...motionStyles,
+				}}
+				layoutId={`wrapper-${lowResSrc}`}
+				ref={ref}
+			>
 				<motion.img
 					src={lowResSrc}
 					className={orientation}
 					layoutId={alt}
 					alt={alt}
-					//style={{...transformStyle}}
-					//ref={ref}
 					onClick={handleImageClick}
 				/>
 			</motion.div>
 
 			{isImageViewerOpen && (
 				<div className="image-viewer">
-					<motion.div className="gallery-image-wrapper" layoutId={`wrapper-${lowResSrc}`}>
+					<motion.div
+						className="gallery-image-wrapper"
+						layoutId={`wrapper-${lowResSrc}`}
+					>
 						<motion.img
 							src={lowResSrc}
 							className={orientation}
 							layoutId={alt}
 							onClick={handleImageClick}
 						/>
-                        <p>Wonderfull holliday</p>
 					</motion.div>
 				</div>
 			)}

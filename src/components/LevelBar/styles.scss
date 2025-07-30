@@ -32,7 +32,7 @@
 .level-bar.background {
 	z-index: 49;
 	@include themify($themes) {
-		background-color: themed("backgroundColor");
+		background-color: themed("levelBarBackgroundColor");
 	}
 	width: 100%;
 	display: flex;

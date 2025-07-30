@@ -4,6 +4,7 @@ import { Skill, configData } from "../../config/config";
 import { LevelBar } from "../LevelBar/LevelBar";
 import "./styles.scss";
 import { motion } from "framer-motion";
+import { MapWidget } from "../MapWidget/MapWidget";
 
 export const SkillSection: FC = () => {
 	const skills: Skill[] = configData.skills;

@@ -1,0 +1,14 @@
+@import "/src/styles/theme-variables.scss";
+
+.map-widget {
+    width: 840px;
+    height: 420px;
+    padding: $space-0;
+    box-sizing: border-box;
+    border-radius: $radius-lg;
+    
+	@include themify($themes) {
+		box-shadow: 5px 5px 5px themed("boxShadowColor");
+		color: themed("textColor");
+	}
+}

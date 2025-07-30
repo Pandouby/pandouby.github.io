@@ -15,6 +15,7 @@ import { GallerySection } from "./components/GallerySection/GallerySection";
 import { TimeLine } from "./components/Timeline/TimeLine";
 import { LanguageSection } from "./components/LanguageSection/LanguageSection";
 import { TestSection } from "./components/TestSection/TestSection";
+import { WidgetGridSection } from "./components/Widgets/WidgetGridSection";
 
 export const App: FC = () => {
 	const isBrowserDefaultDark = () =>

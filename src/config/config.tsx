@@ -17,6 +17,12 @@ export interface Skill {
 	percentage: number;
 }
 
+export interface Language {
+	language: string;
+	proficiency: string;
+	level: number ;
+}
+
 export interface Project {
 	title: string;
 	url: string;
@@ -33,6 +39,7 @@ export interface SocialType {
 
 interface ConfigData {
 	skills: Skill[];
+	languages: Language[];
 	projects: Project[];
 	socials: SocialType[];
 }
@@ -74,6 +81,23 @@ export const configData: ConfigData = {
 			icon: <SiJira className="icon-container" id="Jira" />,
 			percentage: 80,
 		},
+	],
+	languages: [
+		{
+			language: "German",
+			proficiency: "Nativ",
+			level: 10
+		},
+		{
+			language: "English",
+			proficiency: "Profesional Working Proficientcy",
+			level: 8
+		},
+		{
+			language: "French",
+			proficiency: "Elementray",
+			level: 3
+		}
 	],
 	projects: [
 		{

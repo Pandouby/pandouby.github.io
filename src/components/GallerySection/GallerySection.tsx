@@ -144,7 +144,7 @@ export const GallerySection: FC = () => {
 	];
 
 	return (
-		<motion.div className="gallery-section">
+		<div className="gallery-section">
 			<FloatingSectionTitle title="gallery" reverse={true} />
 
 			<div className="gallery">
@@ -161,6 +161,6 @@ export const GallerySection: FC = () => {
 					/>
 				))}
 			</div>
-		</motion.div>
+		</div>
 	);
 };
