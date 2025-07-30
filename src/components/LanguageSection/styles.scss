@@ -1,6 +1,8 @@
 @import "/src/styles/theme-variables.scss";
 
 .language-card {
+	max-width: 650px;
+
 	.card-content {
 		align-items: start;
 		gap: $space-3;
@@ -60,7 +62,7 @@
 @media only screen and (max-width: 768px) {
 	.language-card {
 		width: 100% !important;
-		height: 400px !important;
+		height: 420px !important;
 		flex-wrap: wrap;
 
 		.card-content {

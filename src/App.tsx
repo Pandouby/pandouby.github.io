@@ -29,10 +29,19 @@ export const App: FC = () => {
 	const [theme, setTheme] = useState(getDefaultTheme());
 	ChartJS.register(ArcElement, Tooltip, Legend);
 
-	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
+	const [showLoadingScreen, setShowLoadingScreen] = useState(false);
 
 	useEffect(() => {
-		setTimeout(() => setShowLoadingScreen(false), 3000);
+		const hasShownLoading = sessionStorage.getItem("hasShownLoading");
+
+		if (!hasShownLoading) {
+			setShowLoadingScreen(true);
+			sessionStorage.setItem("hasShownLoading", "true");
+
+			setTimeout(() => {
+				setShowLoadingScreen(false);
+			}, 3000);
+		}
 	}, []);
 
 	return (
@@ -57,8 +66,7 @@ export const App: FC = () => {
 							<div className="section header-section">
 								<Titlecard />
 							</div>
-
-							${/*<TestSection /> Only For Dev purposes*/}
+							{/*<TestSection /> Only For Dev purposes*/}
 
 							<SkillSection />
 
@@ -68,7 +76,7 @@ export const App: FC = () => {
 
 							<ProjectSection />
 
-							<GallerySection /> 
+							<GallerySection />
 
 							<SocialSection />
 

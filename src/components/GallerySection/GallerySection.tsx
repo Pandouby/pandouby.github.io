@@ -144,7 +144,7 @@ export const GallerySection: FC = () => {
 	];
 
 	return (
-		<div className="gallery-section">
+		<div className="gallery-section section">
 			<FloatingSectionTitle title="gallery" reverse={true} />
 
 			<div className="gallery">
