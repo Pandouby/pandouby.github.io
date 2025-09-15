@@ -1,0 +1,35 @@
+@import "/src/styles/theme-variables.scss";
+
+.widget-grid {
+    display: grid;
+	grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-rows: repeat(auto-fill, 300px);
+	width: 100%;
+	max-width: 1600px;
+    height: 100%;
+	box-sizing: border-box;
+	overflow: visible;
+	justify-content: center;
+	align-items: center;
+	gap: $space-3;
+	user-select: none;
+
+    .widget-1 {
+
+    }
+}
+
+
+
+.widget {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+	@include themify($themes) {
+		background-color: themed("primaryColor");
+	}
+}
+
+.padding {
+    padding: $space-4;
+}
