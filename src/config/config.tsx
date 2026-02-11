@@ -101,20 +101,20 @@ export const configData: ConfigData = {
 	],
 	projects: [
 		{
-			title: "Visited",
-			url: "pandouby/Visited",
-			description: "A React Native based application whitch allows you to select your visited countries on a 3D Globe projection",
-			hasGithub: true,
-		},
-		{
 			title: "Bookworm",
 			url: "pandouby/Bookworm",
 			description: "Bookworm is a Swift App in which one can easily add and keep track of the books one owns, has read or wants to read",
 			hasGithub: true,
 		},
 		{
+			title: "LibLense",
+			url: "Pandouby/LibLense",
+			description: "Backend for a Book Recommendation System. A Milvus based Vectore DB to store Multidimensional Bookvectors and do similarity search between different Books",
+			hasGithub: true,
+		},
+		{
 			title: "Portfolio Website",
-			url: "pandouby/pandouby.github.io",
+			url: "Pandouby/pandouby.github.io",
 			description: "This Portfolio Website to be a Ditital CV and showcase my Projects i have worked on",
 			hasGithub: true,
 		},
@@ -122,6 +122,12 @@ export const configData: ConfigData = {
 			title: "Flow-Fields",
 			url: "Pandouby/flow-field",
 			description: "A small Unity project to get into perlin noise based flow-field simulations",
+			hasGithub: true,
+		},
+		{
+			title: "Visited",
+			url: "Pandouby/Visited",
+			description: "A React Native based application whitch allows you to select your visited countries on a 3D Globe projection",
 			hasGithub: true,
 		},
 		{

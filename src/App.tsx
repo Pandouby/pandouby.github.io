@@ -69,7 +69,7 @@ export const App: FC = () => {
 							</div>
 							{/*<TestSection /> Only For Dev purposes*/}
 
-							<WidgetGridSection />
+							{/*<WidgetGridSection />*/}
 
 							<SkillSection />
 

@@ -40,7 +40,7 @@ export const TimeLine: FC = () => {
 					icon={<PiGraph />}
 				>
 					<h3 className="vertical-timeline-element-title">
-						Bacholers in Data Science @ZHAW
+						Bachelor in Data Science @ZHAW
 					</h3>
 					<h4 className="vertical-timeline-element-subtitle">
 						Winterthur, Switzerland
